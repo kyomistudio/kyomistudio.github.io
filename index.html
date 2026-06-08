@@ -66,13 +66,12 @@
           </svg>
           說聲感謝
         </a>
-        <form class="donate__form" data-zone="生活" novalidate>
-          <label class="donate__amount-label" for="amount-life">
-            <span class="donate__currency">NT$</span>
-            <input type="number" id="amount-life" name="amount" min="30" step="10" placeholder="30" inputmode="numeric">
-          </label>
-          <button type="submit" class="btn btn--donate">小額贊助</button>
-        </form>
+        <a class="btn btn--donate" href="https://p.ecpay.com.tw/17369E9" target="_blank" rel="noopener">
+          小額贊助
+          <svg class="btn__icon btn__icon--arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
     </div>
   </section>
@@ -169,13 +168,12 @@
           </svg>
           說聲感謝
         </a>
-        <form class="donate__form" data-zone="SPARK" novalidate>
-          <label class="donate__amount-label" for="amount-spark">
-            <span class="donate__currency">NT$</span>
-            <input type="number" id="amount-spark" name="amount" min="30" step="10" placeholder="30" inputmode="numeric">
-          </label>
-          <button type="submit" class="btn btn--donate">小額贊助</button>
-        </form>
+        <a class="btn btn--donate" href="https://p.ecpay.com.tw/17369E9" target="_blank" rel="noopener">
+          小額贊助
+          <svg class="btn__icon btn__icon--arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
       </div>
     </div>
   </section>
@@ -196,6 +194,33 @@
     </div>
   </section>
 
+  <!-- ===================== 小額贊助 ===================== -->
+  <section class="zone support" id="support">
+    <div class="zone__head">
+      <span class="zone__index">♡</span>
+      <div>
+        <h2 class="zone__title">請工作室喝杯茶</h2>
+        <p class="zone__desc">如果工作室的作品曾為你的日常帶來一點點趣味與陪伴，歡迎用一杯茶的心意支持我們。你的每一份鼓勵，都是這裡持續創作的養分。</p>
+      </div>
+    </div>
+
+    <div class="support__panel">
+      <a class="support__qr" href="https://p.ecpay.com.tw/17369E9" target="_blank" rel="noopener" aria-label="掃描 QR Code 前往綠界小額贊助頁面">
+        <img src="https://payment.ecpay.com.tw/Upload/QRCode/202606/QRCode_fcfdc79a-d559-467e-a5a3-023ed92147f8.png" alt="綠界小額贊助 QR Code" loading="lazy">
+      </a>
+      <div class="support__info">
+        <p class="support__hint">用手機掃描 QR Code，或點擊下方按鈕前往贊助頁面</p>
+        <a class="btn btn--donate" href="https://p.ecpay.com.tw/17369E9" target="_blank" rel="noopener">
+          前往小額贊助
+          <svg class="btn__icon btn__icon--arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+        <p class="support__note">由綠界科技 ECPay 提供安全金流服務</p>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="footer">
@@ -207,9 +232,6 @@
   </div>
   <p class="footer__copyright">© <span id="year"></span> KYOMI STUDIO 趣味工作室. All rights reserved.</p>
 </footer>
-
-<!-- 小提示框，用於抖內按鈕的提示訊息 -->
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="js/script.js"></script>
 </body>

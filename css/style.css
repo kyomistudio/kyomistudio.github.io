@@ -422,50 +422,6 @@ img { max-width: 100%; display: block; }
   gap: 1rem 1.25rem;
 }
 
-.donate__form {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.donate__amount-label {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5em;
-  border: 1px solid var(--color-line);
-  border-radius: 999px;
-  padding: 0.45em 1.1em 0.45em 1.4em;
-  background: var(--color-card);
-  transition: border-color 0.3s ease;
-}
-.donate__amount-label:focus-within {
-  border-color: var(--color-khaki);
-}
-
-.donate__currency {
-  font-size: 0.8rem;
-  letter-spacing: 0.1em;
-  color: var(--color-text-soft);
-}
-
-.donate__amount-label input {
-  width: 4.5em;
-  border: none;
-  background: transparent;
-  font-family: var(--font-body);
-  font-size: 0.95rem;
-  color: var(--color-ink);
-  letter-spacing: 0.04em;
-}
-.donate__amount-label input:focus { outline: none; }
-/* hide number spinners for a cleaner, quieter field */
-.donate__amount-label input::-webkit-outer-spin-button,
-.donate__amount-label input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-.donate__amount-label input[type=number] { -moz-appearance: textfield; }
-
 /* ==========================================================================
    FUTURE / 預留大區
    ========================================================================== */
@@ -495,6 +451,51 @@ img { max-width: 100%; display: block; }
 @keyframes pulse {
   0%, 100% { opacity: 0.4; transform: scale(1); }
   50%      { opacity: 1; transform: scale(1.4); background: var(--color-khaki); }
+}
+
+/* ==========================================================================
+   SUPPORT / 小額贊助
+   ========================================================================== */
+.support__panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(2rem, 5vw, 3.5rem);
+}
+
+.support__qr {
+  flex-shrink: 0;
+  display: block;
+  width: clamp(150px, 24vw, 190px);
+  border: 1px solid var(--color-line);
+  border-radius: 18px;
+  background: var(--color-card);
+  padding: 0.9rem;
+  transition: transform 0.35s cubic-bezier(.22,.85,.34,1), border-color 0.35s ease;
+}
+.support__qr:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-khaki);
+}
+.support__qr img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.support__info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.1rem;
+}
+.support__hint {
+  font-size: 0.92rem;
+  color: var(--color-text);
+}
+.support__note {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-soft);
 }
 
 /* ==========================================================================
@@ -555,44 +556,20 @@ img { max-width: 100%; display: block; }
 }
 
 /* ==========================================================================
-   TOAST
-   ========================================================================== */
-.toast {
-  position: fixed;
-  left: 50%;
-  bottom: 2.5rem;
-  transform: translate(-50%, 130%);
-  z-index: 50;
-  background: var(--color-ink);
-  color: var(--color-bg);
-  font-size: 0.85rem;
-  letter-spacing: 0.06em;
-  padding: 1em 1.85em;
-  border-radius: 999px;
-  box-shadow: 0 20px 48px -16px rgba(74,66,52,0.4);
-  transition: transform 0.5s cubic-bezier(.22,.85,.34,1);
-  white-space: nowrap;
-  max-width: calc(100vw - 3rem);
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.toast.is-visible {
-  transform: translate(-50%, 0);
-}
-
-/* ==========================================================================
    SCROLL REVEAL
    ========================================================================== */
 .zone__head,
 .card,
-.donate {
+.donate,
+.support__panel {
   opacity: 0;
   transform: translateY(28px);
   transition: opacity 0.9s cubic-bezier(.22,.85,.34,1), transform 0.9s cubic-bezier(.22,.85,.34,1);
 }
 .zone__head.is-visible,
 .card.is-visible,
-.donate.is-visible {
+.donate.is-visible,
+.support__panel.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -616,14 +593,12 @@ img { max-width: 100%; display: block; }
   .donate__actions {
     width: 100%;
   }
-  .donate__form {
-    width: 100%;
-  }
-  .donate__amount-label {
-    flex-grow: 1;
-  }
   .btn--thanks, .btn--donate {
     flex-grow: 1;
+  }
+  .support__panel {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
 
