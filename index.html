@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KYOMI STUDIO 趣味工作室 — 我用趣味，品嚐人生</title>
+<meta name="description" content="KYOMI STUDIO 趣味工作室。我用趣味，品嚐人生。探索我們開發的生活與健康風格 APP：SPARK WEAR、SPARK SHAPE、SPARK FIT、SPARK PLATE。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+TC:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<header class="hero">
+  <div class="hero__inner">
+    <img class="hero__logo" src="images/logo.png" alt="KYOMI STUDIO 標誌">
+    <h1 class="hero__title">KYOMI STUDIO</h1>
+    <p class="hero__subtitle">趣味工作室</p>
+    <div class="hero__divider" aria-hidden="true"><span></span></div>
+    <p class="hero__tagline">我用趣味，品嚐人生</p>
+  </div>
+  <a href="#life" class="hero__scroll" aria-label="向下捲動至內容">
+    <span></span>
+    探索作品
+  </a>
+</header>
+
+<main>
+
+  <!-- ===================== 第一大區：生活 ===================== -->
+  <section class="zone" id="life">
+    <div class="zone__head">
+      <span class="zone__index">01</span>
+      <div>
+        <h2 class="zone__title">生活</h2>
+        <p class="zone__desc">把日常的細節，過得更有滋味。這個系列，將陪伴你打理生活裡的大小事。</p>
+      </div>
+    </div>
+
+    <div class="cards cards--single">
+      <article class="card card--soon">
+        <div class="card__badge">籌備中</div>
+        <h3 class="card__name">敬請期待</h3>
+        <p class="card__tagline">下一個關於生活的小發明，正在工作室裡慢慢醞釀。</p>
+        <div class="card__placeholder" aria-hidden="true">
+          <span>App Icon</span>
+        </div>
+        <p class="card__note">即將與你見面 — 敬請期待</p>
+      </article>
+    </div>
+
+    <!-- Donate 區 -->
+    <div class="donate">
+      <div class="donate__text">
+        <h3>喜歡這個系列嗎？</h3>
+        <p>你的鼓勵，是工作室持續創作的養分。</p>
+      </div>
+      <div class="donate__actions">
+        <a class="btn btn--thanks"
+           href="mailto:kyomistudio1203@gmail.com?subject=%E6%84%9F%E8%AC%9D%E4%BD%9C%E8%80%85%EF%BC%81&body=%E5%97%A8%EF%BD%9E%E6%88%91%E6%9D%A5%E8%87%AA%E3%80%8C%E7%94%9F%E6%B4%BB%E3%80%8D%E5%A4%A7%E5%8D%80%EF%BC%8C%E6%83%B3%E5%B0%8D%E4%BD%9C%E8%80%85%E8%AA%AA%E8%81%B2%E6%84%9F%E8%AC%9D%EF%BC%9A">
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 21s-7.5-4.6-10-9.1C0.4 8.6 1.8 5 5.4 5c2 0 3.4 1 4.6 2.6C11.2 6 12.6 5 14.6 5 18.2 5 19.6 8.6 18 11.9 15.5 16.4 12 21 12 21z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+          </svg>
+          說聲感謝
+        </a>
+        <form class="donate__form" data-zone="生活" novalidate>
+          <label class="donate__amount-label" for="amount-life">
+            <span class="donate__currency">NT$</span>
+            <input type="number" id="amount-life" name="amount" min="30" step="10" placeholder="30" inputmode="numeric">
+          </label>
+          <button type="submit" class="btn btn--donate">小額贊助</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 第二大區：SPARK ===================== -->
+  <section class="zone zone--alt" id="spark">
+    <div class="zone__head">
+      <span class="zone__index">02</span>
+      <div>
+        <h2 class="zone__title">SPARK</h2>
+        <p class="zone__desc">一點微小的火花，足以點亮日常的健康與風格。SPARK 系列，陪你紀錄、發現、變得更喜歡自己。</p>
+      </div>
+    </div>
+
+    <div class="cards cards--grid">
+
+      <article class="card">
+        <div class="card__icon">
+          <img src="images/icon-spark-wear.png" alt="SPARK WEAR 圖示" loading="lazy">
+        </div>
+        <h3 class="card__name">SPARK WEAR</h3>
+        <p class="card__tagline">記錄衣櫥所擁有的單品，並有趣味排行榜，還能用穿搭紀錄來記錄生活。</p>
+        <a class="btn btn--download"
+           href="https://drive.google.com/file/d/1snG260893OFGx--wk_3gb97YtdmvB9xk/view?usp=drive_link"
+           target="_blank" rel="noopener">
+          下載 APP
+          <svg class="btn__icon btn__icon--arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+      <article class="card">
+        <div class="card__icon">
+          <img src="images/icon-spark-shape.png" alt="SPARK SHAPE 圖示" loading="lazy">
+        </div>
+        <h3 class="card__name">SPARK SHAPE</h3>
+        <p class="card__tagline">拍照記錄身形變化，前後比較一目了然，看見自己一點一滴的進步。</p>
+        <a class="btn btn--download"
+           href="https://drive.google.com/file/d/1Wmb-y1FyASpl486Nyf3dViRMjsEeU8VL/view?usp=drive_link"
+           target="_blank" rel="noopener">
+          下載 APP
+          <svg class="btn__icon btn__icon--arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+      <article class="card">
+        <div class="card__icon">
+          <img src="images/icon-spark-fit.png" alt="SPARK FIT 圖示" loading="lazy">
+        </div>
+        <h3 class="card__name">SPARK FIT</h3>
+        <p class="card__tagline">記錄身材資料與身型數據，掌握屬於自己的健康節奏。</p>
+        <a class="btn btn--download"
+           href="https://drive.google.com/file/d/1iLQilaRAEUyPHmJMLHP23T23Oc6WAtRw/view?usp=drive_link"
+           target="_blank" rel="noopener">
+          下載 APP
+          <svg class="btn__icon btn__icon--arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+      <article class="card">
+        <div class="card__icon">
+          <img src="images/icon-spark-plate.png" alt="SPARK PLATE 圖示" loading="lazy">
+        </div>
+        <h3 class="card__name">SPARK PLATE</h3>
+        <p class="card__tagline">用照片記錄每一餐，回顧、檢視，也能與朋友分享你的飲食日常。</p>
+        <a class="btn btn--download"
+           href="https://drive.google.com/file/d/1culeoEAEqoVkKux6wNYQjKt_d_XeLOyP/view?usp=drive_link"
+           target="_blank" rel="noopener">
+          下載 APP
+          <svg class="btn__icon btn__icon--arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </article>
+
+    </div>
+
+    <!-- Donate 區 -->
+    <div class="donate">
+      <div class="donate__text">
+        <h3>SPARK 陪你走了一段路嗎？</h3>
+        <p>一點點心意，能讓這個系列走得更遠、更久。</p>
+      </div>
+      <div class="donate__actions">
+        <a class="btn btn--thanks"
+           href="mailto:kyomistudio1203@gmail.com?subject=%E6%84%9F%E8%AC%9D%E4%BD%9C%E8%80%85%EF%BC%81&body=%E5%97%A8%EF%BD%9E%E6%88%91%E6%9D%A5%E8%87%AA%E3%80%8CSPARK%E3%80%8D%E5%A4%A7%E5%8D%80%EF%BC%8C%E6%83%B3%E5%B0%8D%E4%BD%9C%E8%80%85%E8%AA%AA%E8%81%B2%E6%84%9F%E8%AC%9D%EF%BC%9A">
+          <svg class="btn__icon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 21s-7.5-4.6-10-9.1C0.4 8.6 1.8 5 5.4 5c2 0 3.4 1 4.6 2.6C11.2 6 12.6 5 14.6 5 18.2 5 19.6 8.6 18 11.9 15.5 16.4 12 21 12 21z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/>
+          </svg>
+          說聲感謝
+        </a>
+        <form class="donate__form" data-zone="SPARK" novalidate>
+          <label class="donate__amount-label" for="amount-spark">
+            <span class="donate__currency">NT$</span>
+            <input type="number" id="amount-spark" name="amount" min="30" step="10" placeholder="30" inputmode="numeric">
+          </label>
+          <button type="submit" class="btn btn--donate">小額贊助</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 預留：未來大區 ===================== -->
+  <section class="zone zone--future" id="future">
+    <div class="zone__head">
+      <span class="zone__index">＋</span>
+      <div>
+        <h2 class="zone__title">More to come</h2>
+        <p class="zone__desc">工作室仍在持續生長，未來會有更多主題系列在這裡與你相遇。</p>
+      </div>
+    </div>
+    <div class="future__row" aria-hidden="true">
+      <span class="future__dot"></span>
+      <span class="future__dot"></span>
+      <span class="future__dot"></span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p class="footer__brand">KYOMI STUDIO</p>
+  <p class="footer__line">我用趣味，品嚐人生</p>
+  <div class="footer__contact">
+    <p class="footer__contact-label">Contact us 聯絡我們</p>
+    <a class="footer__contact-email" href="mailto:kyomistudio@gmail.com">kyomistudio@gmail.com</a>
+  </div>
+  <p class="footer__copyright">© <span id="year"></span> KYOMI STUDIO 趣味工作室. All rights reserved.</p>
+</footer>
+
+<!-- 小提示框，用於抖內按鈕的提示訊息 -->
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
