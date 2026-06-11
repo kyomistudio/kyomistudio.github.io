@@ -592,14 +592,16 @@ img { max-width: 100%; display: block; }
    RESPONSIVE
    ========================================================================== */
 @media (max-width: 640px) {
-  .cards--grid .card {
-    padding: 1rem 0.75rem;
+  .cards--grid {
+    grid-template-columns: 1fr;
   }
   .cards--grid .card__name {
-    font-size: 0.85rem;
+    font-size: 1.3rem;
+    letter-spacing: 0.08em;
+    white-space: normal;
   }
   .cards--grid .card__tagline {
-    display: none;
+    display: block;
   }
   .zone__head {
     flex-direction: column;
