@@ -248,6 +248,11 @@ img { max-width: 100%; display: block; }
 .cards--single {
   grid-template-columns: minmax(0, 360px);
 }
+.cards--single .card__icon {
+  max-width: 180px;
+  margin-left: auto;
+  margin-right: auto;
+}
 
 .card {
   background: var(--color-card);
