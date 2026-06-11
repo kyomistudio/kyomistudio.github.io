@@ -240,6 +240,11 @@ img { max-width: 100%; display: block; }
 .cards--grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
 }
+.cards--grid .card__name {
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
 .cards--single {
   grid-template-columns: minmax(0, 360px);
 }
