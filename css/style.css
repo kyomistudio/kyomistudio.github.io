@@ -547,25 +547,18 @@ img { max-width: 100%; display: block; }
   margin-bottom: 2.25rem;
 }
 .footer__contact-label {
+  display: inline-block;
   font-size: 0.95rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-ink);
-  margin-bottom: 0.6rem;
-}
-.footer__contact-email {
-  display: inline-block;
-  font-family: var(--font-heading);
-  font-size: 0.7rem;
-  letter-spacing: 0.06em;
-  color: var(--color-text-soft);
-  border-bottom: 1px solid var(--color-khaki);
-  padding-bottom: 0.2em;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 0.15em;
   transition: color 0.3s ease, border-color 0.3s ease;
 }
-.footer__contact-email:hover {
+.footer__contact-label:hover {
   color: var(--color-khaki-deep);
-  border-color: var(--color-khaki-deep);
+  border-color: var(--color-khaki);
 }
 
 .footer__copyright {
