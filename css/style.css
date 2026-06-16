@@ -848,48 +848,15 @@ img { max-width: 100%; display: block; }
   line-height: 1;
 }
 
-/* Instruction tabs */
-.app-how {
-  border: 1px solid var(--color-line);
-  border-radius: 8px;
-  overflow: hidden;
-}
-.app-how__tabs {
-  display: flex;
-  overflow-x: auto;
-  background: var(--color-bg-soft);
-  border-bottom: 1px solid var(--color-line);
-  scrollbar-width: none;
-}
-.app-how__tabs::-webkit-scrollbar { display: none; }
-.app-how__tab {
-  flex-shrink: 0;
-  padding: 0.75em 1.35em;
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
-  color: var(--color-text-soft);
-  background: none;
-  border: none;
-  border-bottom: 2px solid transparent;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: color 0.25s ease, border-color 0.25s ease;
-}
-.app-how__tab:hover { color: var(--color-ink); }
-.app-how__tab.is-active {
-  color: var(--color-khaki-deep);
-  border-bottom-color: var(--color-khaki);
-}
-.app-how__panel {
-  display: none;
-  padding: 1.35rem 1.5rem;
+.app-entry__how {
   font-size: 0.88rem;
   color: var(--color-text-soft);
-  line-height: 1.95;
+  line-height: 1.9;
+  padding: 1.25rem 1.35rem;
+  background: var(--color-bg-soft);
+  border-radius: 6px;
+  border-left: 2px solid var(--color-khaki);
 }
-.app-how__panel.is-active { display: block; }
-.app-how__panel p + p { margin-top: 0.8em; }
 @media (max-width: 720px) {
   .app-entry { grid-template-columns: 1fr; }
   .app-entry__icon { max-width: 120px; }
@@ -967,6 +934,12 @@ img { max-width: 100%; display: block; }
   white-space: nowrap;
   text-overflow: ellipsis;
   transition: opacity 0.2s ease;
+}
+.article-item__preview {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.95;
+  padding-bottom: 1.25rem;
 }
 .article-item__chevron {
   width: 18px;
