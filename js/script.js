@@ -50,6 +50,21 @@
     });
   }
 
+  // App instruction tabs --------------------------------------------------
+  document.querySelectorAll('.app-how__tabs').forEach(function (tabList) {
+    var tabs   = tabList.querySelectorAll('.app-how__tab');
+    var panels = tabList.closest('.app-how').querySelectorAll('.app-how__panel');
+    tabs.forEach(function (tab, i) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (t) { t.classList.remove('is-active'); t.setAttribute('aria-selected', 'false'); });
+        panels.forEach(function (p) { p.classList.remove('is-active'); });
+        tab.classList.add('is-active');
+        tab.setAttribute('aria-selected', 'true');
+        if (panels[i]) panels[i].classList.add('is-active');
+      });
+    });
+  });
+
   // Blog accordion --------------------------------------------------------
   document.querySelectorAll('.article-item__trigger').forEach(function (btn) {
     btn.addEventListener('click', function () {

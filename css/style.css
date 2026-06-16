@@ -821,26 +821,75 @@ img { max-width: 100%; display: block; }
   color: var(--color-ink);
 }
 .app-entry__story { font-size: 0.92rem; color: var(--color-text); line-height: 2; }
-.app-entry__features { list-style: none; }
-.app-entry__features li {
-  font-size: 0.88rem;
-  color: var(--color-text);
-  padding: 0.45em 0;
-  border-bottom: 1px solid var(--color-line-soft);
+/* Feature badges — wraps gracefully for any number of items */
+.app-entry__features {
+  list-style: none;
   display: flex;
-  gap: 0.75em;
-  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
-.app-entry__features li::before { content: '—'; color: var(--color-khaki); flex-shrink: 0; }
-.app-entry__how {
+.app-entry__features li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: 0.38em 0.9em;
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  font-size: 0.82rem;
+  color: var(--color-text);
+  line-height: 1.5;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+.app-entry__features li::before {
+  content: '·';
+  color: var(--color-khaki);
+  font-size: 1.1em;
+  line-height: 1;
+}
+
+/* Instruction tabs */
+.app-how {
+  border: 1px solid var(--color-line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.app-how__tabs {
+  display: flex;
+  overflow-x: auto;
+  background: var(--color-bg-soft);
+  border-bottom: 1px solid var(--color-line);
+  scrollbar-width: none;
+}
+.app-how__tabs::-webkit-scrollbar { display: none; }
+.app-how__tab {
+  flex-shrink: 0;
+  padding: 0.75em 1.35em;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  color: var(--color-text-soft);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.25s ease, border-color 0.25s ease;
+}
+.app-how__tab:hover { color: var(--color-ink); }
+.app-how__tab.is-active {
+  color: var(--color-khaki-deep);
+  border-bottom-color: var(--color-khaki);
+}
+.app-how__panel {
+  display: none;
+  padding: 1.35rem 1.5rem;
   font-size: 0.88rem;
   color: var(--color-text-soft);
-  line-height: 1.9;
-  padding: 1.25rem;
-  background: var(--color-bg-soft);
-  border-radius: 4px;
-  border-left: 2px solid var(--color-khaki);
+  line-height: 1.95;
 }
+.app-how__panel.is-active { display: block; }
+.app-how__panel p + p { margin-top: 0.8em; }
 @media (max-width: 720px) {
   .app-entry { grid-template-columns: 1fr; }
   .app-entry__icon { max-width: 120px; }
