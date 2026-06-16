@@ -934,19 +934,22 @@ img { max-width: 100%; display: block; }
   right: 1.5rem;
   bottom: 2rem;
   z-index: 50;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: var(--color-khaki);
-  color: var(--color-bg);
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 6px 20px rgba(140,119,82,0.35);
-  transition: transform 0.35s cubic-bezier(.22,.85,.34,1), background 0.3s ease;
+  background: none;
+  color: var(--color-khaki);
+  filter: drop-shadow(0 2px 6px rgba(140,119,82,0.25));
+  transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
 }
-.fab:hover { transform: translateY(-3px) scale(1.06); background: var(--color-khaki-deep); }
-.fab svg { width: 22px; height: 22px; }
+.fab:hover {
+  transform: scale(1.15);
+  color: var(--color-khaki-deep);
+  filter: drop-shadow(0 3px 10px rgba(140,119,82,0.4));
+}
+.fab svg { width: 28px; height: 28px; }
 .fab__tip {
   position: absolute;
   right: calc(100% + 0.65rem);
