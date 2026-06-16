@@ -431,19 +431,28 @@ img { max-width: 100%; display: block; }
   font-size: 0.88rem;
   color: var(--color-text-soft);
 }
-.donate__icon {
-  width: 1em;
-  height: 1em;
-  vertical-align: -0.1em;
-  color: var(--color-khaki);
-  margin-right: 0.3em;
-}
-
 .donate__actions {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: 1rem 1.25rem;
+}
+.donate__group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+.donate__caption {
+  display: flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 0.82rem;
+  color: var(--color-text-soft);
+}
+.donate__icon {
+  flex-shrink: 0;
+  color: var(--color-khaki);
 }
 
 /* ==========================================================================
