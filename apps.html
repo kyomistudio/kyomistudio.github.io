@@ -46,6 +46,9 @@
     <p class="page-hero__desc">每一個 APP，都是從生活裡的一個小小願望開始的。找到屬於你的那一款，開始記錄你的日常。</p>
   </div>
 
+  <!-- shared chevron shorthand -->
+  <template id="chevron"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></template>
+
   <div class="app-list">
 
     <!-- DAY LIGHT -->
@@ -55,54 +58,27 @@
       </div>
       <div class="app-entry__body">
         <h2 class="app-entry__name">DAY LIGHT</h2>
-
-        <div class="pager">
-          <div class="pager__pages">
-            <div class="pager__page is-active"><p>（佔位）DAY LIGHT 誕生於一個想好好記錄心情的午後。Kyo 發現，比起洋洋灑灑的長篇日記，其實更需要一個能在一天縫隙裡輕輕放下幾句話的地方。</p></div>
-            <div class="pager__page"><p>（佔位）加上一點正念的光，照亮那些平凡卻不想忘記的瞬間。DAY LIGHT 不追求完美的記錄，只希望你每天都能給自己幾分鐘好好在這裡待一下。</p></div>
-          </div>
-          <button class="pager__next">下一頁</button>
+        <div class="app-entry__controls">
+          <button class="app-drop__trigger" data-target="dl-story">背景故事 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="app-drop__trigger" data-target="dl-feat">APP 亮點 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="app-drop__trigger" data-target="dl-how">操作說明 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <a class="btn btn--download" href="https://drive.google.com/file/d/1MlURWXTp8KIq6I187zr3g2cVUThMdscD/view?usp=drive_link" target="_blank" rel="noopener">下載 <svg class="btn__icon btn__icon--arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
-
-        <div class="app-entry__section">
-          <p class="app-entry__section-label">APP 亮點</p>
+        <div class="app-drop__panel" id="dl-story"><p>（佔位）DAY LIGHT 誕生於一個想好好記錄心情的午後。Kyo 發現，比起洋洋灑灑的長篇日記，更需要的是一個能在一天縫隙裡輕輕放下幾句話的地方，再加上一點正念的光，照亮那些平凡卻不想忘記的瞬間。</p></div>
+        <div class="app-drop__panel" id="dl-feat">
           <ul class="app-entry__features">
             <li>每日心情選擇與文字日記記錄</li>
             <li>一分鐘正念音訊，隨時為自己充電</li>
             <li>（佔位功能項目，待 Kyo 補充）</li>
           </ul>
         </div>
-
-        <div class="app-entry__section">
-          <p class="app-entry__section-label">使用教學</p>
-          <div class="pager">
-            <div class="pager__pages">
-              <div class="pager__page is-active">
-                <ol class="app-how__steps">
-                  <li>開啟 APP，點選今天的心情圖示</li>
-                  <li>在日記欄位寫下幾句話</li>
-                  <li>按下「正念」，聆聽一分鐘引導音訊</li>
-                </ol>
-              </div>
-              <div class="pager__page">
-                <ol class="app-how__steps">
-                  <li>（佔位）點選日曆圖示查看過去的記錄</li>
-                  <li>（佔位）在「設定」中開啟每日提醒</li>
-                </ol>
-              </div>
-            </div>
-            <button class="pager__next">下一頁</button>
-          </div>
+        <div class="app-drop__panel" id="dl-how">
+          <ol class="app-how__steps">
+            <li>開啟 APP，點選今天的心情圖示</li>
+            <li>在日記欄位寫下幾句話</li>
+            <li>按下「正念」，聆聽一分鐘引導音訊</li>
+          </ol>
         </div>
-
-        <a class="btn btn--download"
-           href="https://drive.google.com/file/d/1MlURWXTp8KIq6I187zr3g2cVUThMdscD/view?usp=drive_link"
-           target="_blank" rel="noopener">
-          下載 DAY LIGHT
-          <svg class="btn__icon btn__icon--arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
       </div>
     </article>
 
@@ -113,54 +89,27 @@
       </div>
       <div class="app-entry__body">
         <h2 class="app-entry__name">SPARK WEAR</h2>
-
-        <div class="pager">
-          <div class="pager__pages">
-            <div class="pager__page is-active"><p>（佔位）SPARK WEAR 來自一個問題：「我衣櫥裡到底有多少件衣服，實際上又穿了幾件？」Mimi 把這個問題做成了 APP。</p></div>
-            <div class="pager__page"><p>（佔位）不只記錄衣物，還能看見穿搭的趨勢與排行，讓衣櫥管理變成一件有趣的事。那些買了卻忘記穿的衣服，也終於有機會被重新看見。</p></div>
-          </div>
-          <button class="pager__next">下一頁</button>
+        <div class="app-entry__controls">
+          <button class="app-drop__trigger" data-target="sw-story">背景故事 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="app-drop__trigger" data-target="sw-feat">APP 亮點 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="app-drop__trigger" data-target="sw-how">操作說明 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <a class="btn btn--download" href="https://drive.google.com/file/d/1snG260893OFGx--wk_3gb97YtdmvB9xk/view?usp=drive_link" target="_blank" rel="noopener">下載 <svg class="btn__icon btn__icon--arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
-
-        <div class="app-entry__section">
-          <p class="app-entry__section-label">APP 亮點</p>
+        <div class="app-drop__panel" id="sw-story"><p>（佔位）SPARK WEAR 來自一個問題：「我衣櫥裡到底有多少件衣服，實際上又穿了幾件？」Mimi 把這個問題做成了 APP，不只記錄衣物，還能看見穿搭的趨勢與排行，讓衣櫥管理變成一件有趣的事。</p></div>
+        <div class="app-drop__panel" id="sw-feat">
           <ul class="app-entry__features">
             <li>掃描並建立衣物資料庫</li>
             <li>趣味穿搭排行榜，看見你最常穿的是哪件</li>
             <li>以穿搭紀錄留下每天的樣子</li>
           </ul>
         </div>
-
-        <div class="app-entry__section">
-          <p class="app-entry__section-label">使用教學</p>
-          <div class="pager">
-            <div class="pager__pages">
-              <div class="pager__page is-active">
-                <ol class="app-how__steps">
-                  <li>點選「新增衣物」，拍下衣物照片</li>
-                  <li>填入種類、顏色等基本資訊</li>
-                  <li>重複以上步驟，慢慢把衣櫥建起來</li>
-                </ol>
-              </div>
-              <div class="pager__page">
-                <ol class="app-how__steps">
-                  <li>（佔位）穿搭前瀏覽衣物庫存，組合今日穿搭</li>
-                  <li>（佔位）穿完後記錄，在排行榜看見穿衣習慣</li>
-                </ol>
-              </div>
-            </div>
-            <button class="pager__next">下一頁</button>
-          </div>
+        <div class="app-drop__panel" id="sw-how">
+          <ol class="app-how__steps">
+            <li>點選「新增衣物」，拍下衣物照片</li>
+            <li>填入種類、顏色等基本資訊，完成建檔</li>
+            <li>每天穿搭前瀏覽衣物庫存，穿完後記錄下來</li>
+          </ol>
         </div>
-
-        <a class="btn btn--download"
-           href="https://drive.google.com/file/d/1snG260893OFGx--wk_3gb97YtdmvB9xk/view?usp=drive_link"
-           target="_blank" rel="noopener">
-          下載 SPARK WEAR
-          <svg class="btn__icon btn__icon--arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
       </div>
     </article>
 
@@ -171,54 +120,27 @@
       </div>
       <div class="app-entry__body">
         <h2 class="app-entry__name">SPARK SHAPE</h2>
-
-        <div class="pager">
-          <div class="pager__pages">
-            <div class="pager__page is-active"><p>（佔位）改變身形是一件需要時間的事，但進步往往在日復一日之間悄悄發生。SPARK SHAPE 讓你用照片留下每個時期的自己。</p></div>
-            <div class="pager__page"><p>（佔位）前後一對比，那些細微卻真實的變化就清楚浮現了。不需要等到「明顯不同」才有動力，每一週的自己都值得被看見。</p></div>
-          </div>
-          <button class="pager__next">下一頁</button>
+        <div class="app-entry__controls">
+          <button class="app-drop__trigger" data-target="ss-story">背景故事 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="app-drop__trigger" data-target="ss-feat">APP 亮點 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="app-drop__trigger" data-target="ss-how">操作說明 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <a class="btn btn--download" href="https://drive.google.com/file/d/1Wmb-y1FyASpl486Nyf3dViRMjsEeU8VL/view?usp=drive_link" target="_blank" rel="noopener">下載 <svg class="btn__icon btn__icon--arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
-
-        <div class="app-entry__section">
-          <p class="app-entry__section-label">APP 亮點</p>
+        <div class="app-drop__panel" id="ss-story"><p>（佔位）改變身形是一件需要時間的事，但進步往往在日復一日之間悄悄發生。SPARK SHAPE 讓你用照片留下每個時期的自己，前後一對比，那些細微卻真實的變化就清楚浮現了。</p></div>
+        <div class="app-drop__panel" id="ss-feat">
           <ul class="app-entry__features">
             <li>定期拍照記錄身形變化</li>
             <li>前後期照片對比，進步一目了然</li>
             <li>（佔位功能項目，待 Mimi 補充）</li>
           </ul>
         </div>
-
-        <div class="app-entry__section">
-          <p class="app-entry__section-label">使用教學</p>
-          <div class="pager">
-            <div class="pager__pages">
-              <div class="pager__page is-active">
-                <ol class="app-how__steps">
-                  <li>點選「新增記錄」，選擇拍攝角度</li>
-                  <li>在固定位置、固定光源下拍攝</li>
-                  <li>儲存後 APP 自動整理成時間軸</li>
-                </ol>
-              </div>
-              <div class="pager__page">
-                <ol class="app-how__steps">
-                  <li>（佔位）進入「對比」，選取兩個時間點並排比較</li>
-                  <li>（佔位）設定每週提醒，讓記錄變成習慣</li>
-                </ol>
-              </div>
-            </div>
-            <button class="pager__next">下一頁</button>
-          </div>
+        <div class="app-drop__panel" id="ss-how">
+          <ol class="app-how__steps">
+            <li>點選「新增記錄」，選擇拍攝角度</li>
+            <li>在固定位置、固定光源下拍攝正面或側面照</li>
+            <li>儲存後 APP 自動整理成時間軸，進入「對比」並排比較</li>
+          </ol>
         </div>
-
-        <a class="btn btn--download"
-           href="https://drive.google.com/file/d/1Wmb-y1FyASpl486Nyf3dViRMjsEeU8VL/view?usp=drive_link"
-           target="_blank" rel="noopener">
-          下載 SPARK SHAPE
-          <svg class="btn__icon btn__icon--arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
       </div>
     </article>
 
@@ -229,54 +151,27 @@
       </div>
       <div class="app-entry__body">
         <h2 class="app-entry__name">SPARK FIT</h2>
-
-        <div class="pager">
-          <div class="pager__pages">
-            <div class="pager__page is-active"><p>（佔位）健康的節奏因人而異，SPARK FIT 幫你找到屬於自己的那一套。記錄身材數據、追蹤各項指標，讓數字不再只是數字。</p></div>
-            <div class="pager__page"><p>（佔位）了解自己身體的一扇窗，從每天一個小動作開始——量一量、記錄下來，看著折線圖說出屬於你的身體故事。</p></div>
-          </div>
-          <button class="pager__next">下一頁</button>
+        <div class="app-entry__controls">
+          <button class="app-drop__trigger" data-target="sf-story">背景故事 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="app-drop__trigger" data-target="sf-feat">APP 亮點 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="app-drop__trigger" data-target="sf-how">操作說明 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <a class="btn btn--download" href="https://drive.google.com/file/d/1iLQilaRAEUyPHmJMLHP23T23Oc6WAtRw/view?usp=drive_link" target="_blank" rel="noopener">下載 <svg class="btn__icon btn__icon--arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
-
-        <div class="app-entry__section">
-          <p class="app-entry__section-label">APP 亮點</p>
+        <div class="app-drop__panel" id="sf-story"><p>（佔位）健康的節奏因人而異，SPARK FIT 幫你找到屬於自己的那一套。記錄身材數據、追蹤各項指標，讓數字不再只是數字，而是了解自己身體的一扇窗。</p></div>
+        <div class="app-drop__panel" id="sf-feat">
           <ul class="app-entry__features">
             <li>記錄體重、體脂等身材數據</li>
             <li>數據圖表化，掌握長期趨勢</li>
             <li>（佔位功能項目，待 Mimi 補充）</li>
           </ul>
         </div>
-
-        <div class="app-entry__section">
-          <p class="app-entry__section-label">使用教學</p>
-          <div class="pager">
-            <div class="pager__pages">
-              <div class="pager__page is-active">
-                <ol class="app-how__steps">
-                  <li>量完數據後開啟 APP</li>
-                  <li>點選「新增記錄」，輸入今天的數值</li>
-                  <li>儲存後系統自動生成趨勢折線圖</li>
-                </ol>
-              </div>
-              <div class="pager__page">
-                <ol class="app-how__steps">
-                  <li>（佔位）進入「圖表」，選取要查看的時間範圍</li>
-                  <li>（佔位）在「目標」功能設定目標數值追蹤進度</li>
-                </ol>
-              </div>
-            </div>
-            <button class="pager__next">下一頁</button>
-          </div>
+        <div class="app-drop__panel" id="sf-how">
+          <ol class="app-how__steps">
+            <li>量完數據後開啟 APP，點選「新增記錄」</li>
+            <li>輸入今天的體重或體脂數值，儲存</li>
+            <li>系統自動生成趨勢折線圖，進入「圖表」查看長期變化</li>
+          </ol>
         </div>
-
-        <a class="btn btn--download"
-           href="https://drive.google.com/file/d/1iLQilaRAEUyPHmJMLHP23T23Oc6WAtRw/view?usp=drive_link"
-           target="_blank" rel="noopener">
-          下載 SPARK FIT
-          <svg class="btn__icon btn__icon--arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
       </div>
     </article>
 
@@ -287,56 +182,27 @@
       </div>
       <div class="app-entry__body">
         <h2 class="app-entry__name">SPARK PLATE</h2>
-
-        <div class="pager">
-          <div class="pager__pages">
-            <div class="pager__page is-active"><p>（佔位）吃是一件日常又不平凡的事。SPARK PLATE 讓你用最直觀的方式——拍張照——把每一餐都留下來。</p></div>
-            <div class="pager__page"><p>（佔位）回顧的時候，那些吃過的滋味、和誰一起吃、在哪裡吃，都會悄悄回來。食物的記憶，往往比你以為的還要深。</p></div>
-          </div>
-          <button class="pager__next">下一頁</button>
+        <div class="app-entry__controls">
+          <button class="app-drop__trigger" data-target="sp-story">背景故事 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="app-drop__trigger" data-target="sp-feat">APP 亮點 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <button class="app-drop__trigger" data-target="sp-how">操作說明 <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <a class="btn btn--download" href="https://drive.google.com/uc?export=download&amp;id=1CSIRhyZtbsatF90OHi5ztavz59Rf-Sio" target="_blank" rel="noopener">下載 <svg class="btn__icon btn__icon--arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
-
-        <div class="app-entry__section">
-          <p class="app-entry__section-label">APP 亮點</p>
+        <div class="app-drop__panel" id="sp-story"><p>（佔位）吃是一件日常又不平凡的事。SPARK PLATE 讓你用最直觀的方式——拍張照——把每一餐都留下來。回顧的時候，那些吃過的滋味、和誰一起吃、在哪裡吃，都會悄悄回來。</p></div>
+        <div class="app-drop__panel" id="sp-feat">
           <ul class="app-entry__features">
             <li>拍照記錄每日三餐，操作直覺簡單</li>
             <li>回顧飲食日誌，檢視飲食習慣</li>
             <li>與朋友分享你的飲食日常</li>
           </ul>
         </div>
-
-        <div class="app-entry__section">
-          <p class="app-entry__section-label">使用教學</p>
-          <div class="pager">
-            <div class="pager__pages">
-              <div class="pager__page is-active">
-                <ol class="app-how__steps">
-                  <li>吃飯前或後，點選「記錄這一餐」</li>
-                  <li>拍下這一餐的照片</li>
-                  <li>加上備註（地點、心情或食材），儲存完成</li>
-                </ol>
-              </div>
-              <div class="pager__page">
-                <ol class="app-how__steps">
-                  <li>（佔位）進入「日誌」，以日曆檢視飲食記錄</li>
-                  <li>（佔位）點選任一天，查看當天飲食詳情</li>
-                  <li>（佔位）點選「分享」，把飲食卡片傳給朋友</li>
-                </ol>
-              </div>
-            </div>
-            <button class="pager__next">下一頁</button>
-          </div>
+        <div class="app-drop__panel" id="sp-how">
+          <ol class="app-how__steps">
+            <li>吃飯前或後，點選「記錄這一餐」</li>
+            <li>拍下這一餐的照片</li>
+            <li>加上備註（地點、心情或食材），儲存完成</li>
+          </ol>
         </div>
-        </div>
-
-        <a class="btn btn--download"
-           href="https://drive.google.com/uc?export=download&amp;id=1CSIRhyZtbsatF90OHi5ztavz59Rf-Sio"
-           target="_blank" rel="noopener">
-          下載 SPARK PLATE
-          <svg class="btn__icon btn__icon--arrow" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M12 5v14M12 19l-6-6M12 19l6-6" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </a>
       </div>
     </article>
 

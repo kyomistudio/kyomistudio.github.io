@@ -50,17 +50,15 @@
     });
   }
 
-  // Pager — 下一頁 cycling ----------------------------------------------
-  document.querySelectorAll('.pager').forEach(function (pager) {
-    var pages   = pager.querySelectorAll('.pager__page');
-    var nextBtn = pager.querySelector('.pager__next');
-    if (!nextBtn || pages.length <= 1) { if (nextBtn) nextBtn.hidden = true; return; }
-    var current = 0;
-    nextBtn.addEventListener('click', function () {
-      pages[current].classList.remove('is-active');
-      current = (current + 1) % pages.length;
-      pages[current].classList.add('is-active');
-      nextBtn.textContent = current === 0 ? '下一頁' : (current === pages.length - 1 ? '← 回到開頭' : '下一頁');
+  // App dropdown panels --------------------------------------------------
+  document.querySelectorAll('.app-drop__trigger').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var entry  = btn.closest('.app-entry');
+      var target = document.getElementById(btn.dataset.target);
+      var isOpen = target.classList.contains('is-active');
+      entry.querySelectorAll('.app-drop__trigger').forEach(function (t) { t.classList.remove('is-active'); });
+      entry.querySelectorAll('.app-drop__panel').forEach(function (p) { p.classList.remove('is-active'); });
+      if (!isOpen) { btn.classList.add('is-active'); target.classList.add('is-active'); }
     });
   });
 
