@@ -365,7 +365,7 @@ img { max-width: 100%; display: block; }
 .btn__icon--arrow { transition: transform 0.35s ease; }
 
 .btn--download {
-  align-self: flex-start;
+  align-self: center;
   background: transparent;
   border-color: var(--color-khaki);
   color: var(--color-khaki-deep);
