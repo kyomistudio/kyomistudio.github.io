@@ -376,6 +376,13 @@ img { max-width: 100%; display: block; }
 }
 .btn--download:hover .btn__icon--arrow { transform: translateY(2px); }
 
+.card .btn--download {
+  width: 75%;
+  align-self: center;
+  justify-content: center;
+  padding: 1.1em 1.9em;
+}
+
 .btn--thanks {
   background: var(--color-ink);
   color: var(--color-bg);
