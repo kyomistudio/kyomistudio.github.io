@@ -50,12 +50,29 @@
     });
   }
 
-  // Blog accordion --------------------------------------------------------
-  document.querySelectorAll('.article-item__trigger').forEach(function (btn) {
+  // Pager — story and tutorial pagination --------------------------------
+  document.querySelectorAll('.pager').forEach(function (pager) {
+    var pages  = pager.querySelectorAll('.pager__page');
+    var dots   = pager.querySelectorAll('.pager__dot');
+    var footer = pager.querySelector('.pager__footer');
+    if (pages.length <= 1 && footer) { footer.hidden = true; return; }
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () {
+        pages.forEach(function (p) { p.classList.remove('is-active'); });
+        dots.forEach(function (d) { d.classList.remove('is-active'); });
+        pages[i].classList.add('is-active');
+        dot.classList.add('is-active');
+      });
+    });
+  });
+
+  // Blog — 繼續閱讀 / 收起 accordion ------------------------------------
+  document.querySelectorAll('.article-item__more').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var item = btn.closest('.article-item');
       var open = item.classList.toggle('is-open');
       btn.setAttribute('aria-expanded', open);
+      btn.textContent = open ? '收起' : '繼續閱讀';
       var body = item.querySelector('.article-item__body');
       if (body) body.setAttribute('aria-hidden', String(!open));
     });

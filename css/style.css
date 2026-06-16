@@ -820,43 +820,95 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.14em;
   color: var(--color-ink);
 }
-.app-entry__story { font-size: 0.92rem; color: var(--color-text); line-height: 2; }
-/* Feature badges — wraps gracefully for any number of items */
-.app-entry__features {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-}
-.app-entry__features li {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45em;
-  padding: 0.38em 0.9em;
-  background: var(--color-bg-soft);
-  border: 1px solid var(--color-line);
-  border-radius: 999px;
-  font-size: 0.82rem;
-  color: var(--color-text);
-  line-height: 1.5;
-  transition: border-color 0.25s ease, background 0.25s ease;
-}
-.app-entry__features li::before {
-  content: '·';
-  color: var(--color-khaki);
-  font-size: 1.1em;
-  line-height: 1;
+/* Section label above features / tutorial */
+.app-entry__section-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.32em;
+  color: var(--color-khaki-deep);
+  text-transform: uppercase;
+  margin-top: 0.25rem;
 }
 
-.app-entry__how {
-  font-size: 0.88rem;
-  color: var(--color-text-soft);
-  line-height: 1.9;
-  padding: 1.25rem 1.35rem;
-  background: var(--color-bg-soft);
-  border-radius: 6px;
-  border-left: 2px solid var(--color-khaki);
+/* Features — numbered list */
+.app-entry__features {
+  list-style: none;
+  counter-reset: feature-counter;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
 }
+.app-entry__features li {
+  counter-increment: feature-counter;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  font-size: 0.92rem;
+  color: var(--color-text);
+  line-height: 1.8;
+}
+.app-entry__features li::before {
+  content: counter(feature-counter, decimal-leading-zero);
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  color: var(--color-khaki);
+  letter-spacing: 0.05em;
+  min-width: 2rem;
+  padding-top: 0.2em;
+}
+
+/* Tutorial steps (inside pager) */
+.app-how__steps {
+  list-style: none;
+  counter-reset: step-counter;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.app-how__steps li {
+  counter-increment: step-counter;
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.8;
+}
+.app-how__steps li::before {
+  content: counter(step-counter);
+  flex-shrink: 0;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  background: var(--color-bg-soft);
+  border: 1px solid var(--color-khaki);
+  color: var(--color-khaki-deep);
+  font-size: 0.7rem;
+  font-family: var(--font-display);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.1em;
+}
+
+/* Pager — shared component (story + tutorial) */
+.pager { display: flex; flex-direction: column; gap: 1rem; }
+.pager__pages { }
+.pager__page { display: none; font-size: 0.92rem; color: var(--color-text); line-height: 2; }
+.pager__page.is-active { display: block; }
+.pager__page p + p { margin-top: 0.75em; }
+.pager__footer { display: flex; align-items: center; gap: 0.45rem; }
+.pager__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--color-line);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: width 0.25s ease, background 0.25s ease;
+}
+.pager__dot.is-active { width: 20px; background: var(--color-khaki); }
 @media (max-width: 720px) {
   .app-entry { grid-template-columns: 1fr; }
   .app-entry__icon { max-width: 120px; }
@@ -906,60 +958,54 @@ img { max-width: 100%; display: block; }
   margin-bottom: 1.75rem;
 }
 .article-list { list-style: none; }
-.article-item { border-bottom: 1px solid var(--color-line); }
-.article-item__trigger {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  padding: 1.4rem 0;
-  cursor: pointer;
-  background: none;
-  border: none;
-  text-align: left;
+.article-item {
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--color-line);
 }
 .article-item__title {
   font-family: var(--font-heading);
-  font-size: 1rem;
-  letter-spacing: 0.06em;
+  font-size: clamp(1.2rem, 2.5vw, 1.55rem);
+  letter-spacing: 0.05em;
   color: var(--color-ink);
-  flex-grow: 1;
-}
-.article-item__summary {
-  font-size: 0.82rem;
-  color: var(--color-text-soft);
-  flex-shrink: 0;
-  max-width: 200px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  transition: opacity 0.2s ease;
+  line-height: 1.5;
+  font-weight: 500;
+  margin-bottom: 1.1rem;
 }
 .article-item__preview {
-  font-size: 0.9rem;
-  color: var(--color-text);
-  line-height: 1.95;
-  padding-bottom: 1.25rem;
+  font-size: 0.92rem;
+  color: var(--color-text-soft);
+  line-height: 2;
+  margin-bottom: 1.35rem;
 }
-.article-item__chevron {
-  width: 18px;
-  height: 18px;
-  flex-shrink: 0;
-  color: var(--color-khaki);
-  transition: transform 0.35s cubic-bezier(.22,.85,.34,1);
+.article-item__more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 0.78rem;
+  letter-spacing: 0.2em;
+  color: var(--color-khaki-deep);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-khaki);
+  cursor: pointer;
+  padding: 0 0 0.15em;
+  transition: color 0.2s ease, border-color 0.2s ease;
 }
-.article-item.is-open .article-item__chevron { transform: rotate(180deg); }
+.article-item__more:hover { color: var(--color-ink); border-color: var(--color-ink); }
 .article-item__body {
   overflow: hidden;
   max-height: 0;
-  transition: max-height 0.45s cubic-bezier(.22,.85,.34,1);
+  transition: max-height 0.5s cubic-bezier(.22,.85,.34,1);
+}
+.article-item.is-open .article-item__body { max-height: 3000px; }
+.article-item__content {
+  padding-top: 1.75rem;
+  padding-bottom: 0.5rem;
   font-size: 0.92rem;
   color: var(--color-text);
-  line-height: 2;
+  line-height: 2.1;
 }
-.article-item.is-open .article-item__body { max-height: 1200px; }
-.article-item__content { padding-bottom: 1.75rem; }
-.article-item__content p + p { margin-top: 1em; }
+.article-item__content p + p { margin-top: 1.1em; }
 
 /* Scroll reveal — new page elements */
 .profile,
