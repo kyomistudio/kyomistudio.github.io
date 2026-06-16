@@ -50,19 +50,17 @@
     });
   }
 
-  // Pager — story and tutorial pagination --------------------------------
+  // Pager — 下一頁 cycling ----------------------------------------------
   document.querySelectorAll('.pager').forEach(function (pager) {
-    var pages  = pager.querySelectorAll('.pager__page');
-    var dots   = pager.querySelectorAll('.pager__dot');
-    var footer = pager.querySelector('.pager__footer');
-    if (pages.length <= 1 && footer) { footer.hidden = true; return; }
-    dots.forEach(function (dot, i) {
-      dot.addEventListener('click', function () {
-        pages.forEach(function (p) { p.classList.remove('is-active'); });
-        dots.forEach(function (d) { d.classList.remove('is-active'); });
-        pages[i].classList.add('is-active');
-        dot.classList.add('is-active');
-      });
+    var pages   = pager.querySelectorAll('.pager__page');
+    var nextBtn = pager.querySelector('.pager__next');
+    if (!nextBtn || pages.length <= 1) { if (nextBtn) nextBtn.hidden = true; return; }
+    var current = 0;
+    nextBtn.addEventListener('click', function () {
+      pages[current].classList.remove('is-active');
+      current = (current + 1) % pages.length;
+      pages[current].classList.add('is-active');
+      nextBtn.textContent = current === 0 ? '下一頁' : (current === pages.length - 1 ? '← 回到開頭' : '下一頁');
     });
   });
 
