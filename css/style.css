@@ -947,6 +947,27 @@ img { max-width: 100%; display: block; }
 }
 .fab:hover { transform: translateY(-3px) scale(1.06); background: var(--color-khaki-deep); }
 .fab svg { width: 22px; height: 22px; }
+.fab__tip {
+  position: absolute;
+  right: calc(100% + 0.65rem);
+  top: 50%;
+  transform: translateY(-50%) translateX(6px);
+  white-space: nowrap;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  color: var(--color-ink);
+  background: var(--color-bg);
+  border: 1px solid var(--color-line);
+  border-radius: 4px;
+  padding: 0.3em 0.75em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.fab:hover .fab__tip {
+  opacity: 1;
+  transform: translateY(-50%) translateX(0);
+}
 
 /* ==========================================================================
    BLOG PAGE
