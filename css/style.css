@@ -871,6 +871,8 @@ img { max-width: 100%; display: block; }
   border-top: 1px solid var(--color-line);
 }
 .app-drop__panel.is-active { display: block; }
+.app-drop__panel p { font-size: 0.86rem; color: var(--color-text); line-height: 1.9; }
+.app-drop__panel p + p { margin-top: 0.9rem; }
 
 /* Features — numbered list */
 .app-entry__features {
