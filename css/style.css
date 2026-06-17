@@ -819,7 +819,7 @@ img { max-width: 100%; display: block; }
 .app-entry__name {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
   letter-spacing: 0.18em;
   color: var(--color-ink);
 }
@@ -835,7 +835,7 @@ img { max-width: 100%; display: block; }
   display: inline-flex;
   align-items: center;
   gap: 0.3em;
-  font-size: 0.76rem;
+  font-size: 0.85rem;
   letter-spacing: 0.06em;
   color: var(--color-text);
   background: none;
@@ -859,7 +859,7 @@ img { max-width: 100%; display: block; }
 .app-drop__trigger.is-active svg { transform: rotate(180deg); }
 .app-entry__controls .btn--download {
   margin-left: auto;
-  font-size: 0.76rem;
+  font-size: 0.85rem;
   padding: 0.38em 1em;
   letter-spacing: 0.08em;
 }
@@ -871,7 +871,7 @@ img { max-width: 100%; display: block; }
   border-top: 1px solid var(--color-line);
 }
 .app-drop__panel.is-active { display: block; }
-.app-drop__panel p { font-size: 0.86rem; color: var(--color-text); line-height: 1.9; }
+.app-drop__panel p { font-size: 0.95rem; color: var(--color-text); line-height: 1.9; }
 .app-drop__panel p + p { margin-top: 0.9rem; }
 
 /* Features — numbered list */
@@ -887,7 +887,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   gap: 0.7rem;
   align-items: baseline;
-  font-size: 0.86rem;
+  font-size: 0.95rem;
   color: var(--color-text);
   line-height: 1.7;
 }
@@ -895,7 +895,7 @@ img { max-width: 100%; display: block; }
   content: counter(feature-counter, decimal-leading-zero);
   flex-shrink: 0;
   font-family: var(--font-display);
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   color: var(--color-khaki);
   min-width: 1.6rem;
 }
@@ -913,7 +913,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   gap: 0.7rem;
   align-items: baseline;
-  font-size: 0.86rem;
+  font-size: 0.95rem;
   color: var(--color-text);
   line-height: 1.7;
 }
@@ -921,7 +921,7 @@ img { max-width: 100%; display: block; }
   content: counter(step-counter);
   flex-shrink: 0;
   font-family: var(--font-display);
-  font-size: 0.7rem;
+  font-size: 0.78rem;
   color: var(--color-khaki);
   min-width: 1.6rem;
 }
