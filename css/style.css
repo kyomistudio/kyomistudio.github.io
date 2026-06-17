@@ -1020,6 +1020,7 @@ img { max-width: 100%; display: block; }
   line-height: 2;
   margin-bottom: 1.35rem;
 }
+.article-item.is-open .article-item__preview { display: none; }
 .article-item__more {
   display: inline-flex;
   align-items: center;
