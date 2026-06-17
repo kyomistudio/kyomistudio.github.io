@@ -1049,6 +1049,15 @@ img { max-width: 100%; display: block; }
   line-height: 2.1;
 }
 .article-item__content p + p { margin-top: 1.1em; }
+.article-item__sub {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--color-ink);
+  letter-spacing: 0.04em;
+  margin-top: 1.75em !important;
+  margin-bottom: -0.4em;
+}
 
 /* Scroll reveal — new page elements */
 .profile,
