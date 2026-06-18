@@ -30,8 +30,12 @@
   // Active nav link -------------------------------------------------------
   var navLinks = document.querySelectorAll('.site-nav__link[data-page]');
   var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  var inBlogDir = window.location.pathname.includes('/blog/');
   navLinks.forEach(function (link) {
-    if (link.getAttribute('data-page') === currentPage) link.classList.add('is-active');
+    var page = link.getAttribute('data-page');
+    if (page === currentPage || (inBlogDir && page === 'blog.html')) {
+      link.classList.add('is-active');
+    }
   });
 
   // Mobile nav toggle -----------------------------------------------------
@@ -59,18 +63,6 @@
       entry.querySelectorAll('.app-drop__trigger').forEach(function (t) { t.classList.remove('is-active'); });
       entry.querySelectorAll('.app-drop__panel').forEach(function (p) { p.classList.remove('is-active'); });
       if (!isOpen) { btn.classList.add('is-active'); target.classList.add('is-active'); }
-    });
-  });
-
-  // Blog — 繼續閱讀 / 收起 accordion ------------------------------------
-  document.querySelectorAll('.article-item__more').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var item = btn.closest('.article-item');
-      var open = item.classList.toggle('is-open');
-      btn.setAttribute('aria-expanded', open);
-      btn.textContent = open ? '收起' : '繼續閱讀';
-      var body = item.querySelector('.article-item__body');
-      if (body) body.setAttribute('aria-hidden', String(!open));
     });
   });
 
