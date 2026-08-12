@@ -343,120 +343,29 @@
         </div>
         <div class="app-drop__panel" id="sf-screens">
         <div class="app-screenshots">
-          <!-- Screen 1: 每日數據 -->
           <div class="app-screen">
             <div class="app-screen__frame">
-              <div class="app-screen__body" style="background:#fdf8f8;">
-                <div style="padding:0.8em 0.9em 0.4em;">
-                  <div style="font-size:0.8em;font-weight:700;color:#e8968a;">SPARK FIT</div>
-                  <div style="font-size:0.55em;color:#aaa;">2026年6月18日（日）</div>
-                </div>
-                <div style="flex:1;overflow:hidden;padding:0 0.8em 0.6em;display:flex;flex-direction:column;gap:0.5em;">
-                  <div style="background:#e8968a;border-radius:0.6em;padding:0.7em 0.8em;">
-                    <div style="font-size:0.55em;color:rgba(255,255,255,0.8);margin-bottom:0.2em;">目前體重</div>
-                    <div style="font-size:1.1em;font-weight:700;color:#fff;">56.0 <span style="font-size:0.5em;">kg</span></div>
-                    <div style="font-size:0.52em;color:rgba(255,255,255,0.7);">目標 53 kg，只差 3 kg！</div>
-                  </div>
-                  <div style="font-size:0.65em;font-weight:600;color:#555;">身體尺寸</div>
-                  <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.3em;">
-                    <div style="background:#fff;border:1px solid #f0e0e0;border-radius:0.5em;padding:0.4em 0.5em;"><div style="font-size:0.52em;color:#bbb;">胸圍</div><div style="font-size:0.65em;color:#555;">86 cm</div></div>
-                    <div style="background:#fff;border:1px solid #f0e0e0;border-radius:0.5em;padding:0.4em 0.5em;"><div style="font-size:0.52em;color:#bbb;">腰圍</div><div style="font-size:0.65em;color:#555;">64 cm</div></div>
-                    <div style="background:#fff;border:1px solid #f0e0e0;border-radius:0.5em;padding:0.4em 0.5em;"><div style="font-size:0.52em;color:#bbb;">低腰圍</div><div style="font-size:0.65em;color:#555;">74 cm</div></div>
-                    <div style="background:#fff;border:1px solid #f0e0e0;border-radius:0.5em;padding:0.4em 0.5em;"><div style="font-size:0.52em;color:#bbb;">臀圍</div><div style="font-size:0.65em;color:#555;">90 cm</div></div>
-                  </div>
-                </div>
-                <div style="border-top:1px solid #eee;display:flex;background:#fff;padding:0.4em 0;">
-                  <div style="flex:1;text-align:center;font-size:0.6em;color:#e8968a;font-weight:600;">📊 數據</div>
-                  <div style="flex:1;text-align:center;font-size:0.6em;color:#aaa;">∿ 報告</div>
-                  <div style="flex:1;text-align:center;font-size:0.6em;color:#aaa;">📋 分析</div>
-                </div>
+              <div class="app-screen__body">
+                <img src="images/screen-spark-fit-1.jpg" alt="SPARK FIT 每日數據畫面" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
               </div>
             </div>
             <span class="app-screen__label">每日數據</span>
           </div>
-          <!-- Screen 2: 體重趨勢圖 -->
           <div class="app-screen">
             <div class="app-screen__frame">
-              <div class="app-screen__body" style="background:#fdf8f8;">
-                <div style="padding:0.8em 0.9em 0.4em;">
-                  <div style="font-size:0.8em;font-weight:700;color:#e8968a;">SPARK FIT</div>
-                  <div style="font-size:0.55em;color:#aaa;">報告</div>
-                </div>
-                <div style="padding:0 0.7em;display:flex;gap:0.3em;margin-bottom:0.35em;">
-                  <span style="border:1px solid #ddd;border-radius:8px;padding:0.15em 0.4em;font-size:0.55em;color:#aaa;">單日</span>
-                  <span style="background:#e8968a;color:#fff;border-radius:8px;padding:0.15em 0.4em;font-size:0.55em;">折線圖</span>
-                </div>
-                <div style="padding:0 0.7em;display:flex;gap:0.25em;margin-bottom:0.35em;">
-                  <span style="background:#e8968a;color:#fff;border-radius:6px;padding:0.1em 0.35em;font-size:0.52em;">體重</span>
-                  <span style="border:1px solid #eee;border-radius:6px;padding:0.1em 0.35em;font-size:0.52em;color:#bbb;">胸圍</span>
-                  <span style="border:1px solid #eee;border-radius:6px;padding:0.1em 0.35em;font-size:0.52em;color:#bbb;">腰圍</span>
-                </div>
-                <div style="margin:0 0.7em;background:#fff;border-radius:0.6em;padding:0.6em;border:1px solid #f0e8e8;flex:1;">
-                  <div style="font-size:0.55em;color:#aaa;margin-bottom:0.3em;">體重（kg）</div>
-                  <svg width="100%" height="80" viewBox="0 0 130 80" aria-hidden="true">
-                    <line x1="8" y1="70" x2="125" y2="70" stroke="#f0e8e8" stroke-width="1"/>
-                    <line x1="8" y1="50" x2="125" y2="50" stroke="#f0e8e8" stroke-width="1"/>
-                    <line x1="8" y1="30" x2="125" y2="30" stroke="#f0e8e8" stroke-width="1"/>
-                    <text x="0" y="73" font-size="6" fill="#ccc">60</text>
-                    <text x="0" y="53" font-size="6" fill="#ccc">62</text>
-                    <text x="0" y="33" font-size="6" fill="#ccc">64</text>
-                    <polyline points="18,38 40,40 62,46 84,50 106,45 124,52" fill="none" stroke="#e8968a" stroke-width="1.5" stroke-linejoin="round"/>
-                    <circle cx="18" cy="38" r="2.5" fill="#e8968a"/>
-                    <circle cx="40" cy="40" r="2.5" fill="#e8968a"/>
-                    <circle cx="62" cy="46" r="2.5" fill="#e8968a"/>
-                    <circle cx="84" cy="50" r="2.5" fill="#e8968a"/>
-                    <circle cx="106" cy="45" r="2.5" fill="#e8968a"/>
-                    <circle cx="124" cy="52" r="2.5" fill="#e8968a"/>
-                  </svg>
-                  <div style="display:flex;justify-content:space-between;font-size:0.45em;color:#ccc;padding:0 0.5em;">
-                    <span>5/1</span><span>5/15</span><span>6/1</span><span>6/15</span>
-                  </div>
-                </div>
-                <div style="border-top:1px solid #eee;display:flex;background:#fff;padding:0.4em 0;margin-top:0.4em;">
-                  <div style="flex:1;text-align:center;font-size:0.6em;color:#aaa;">📊 數據</div>
-                  <div style="flex:1;text-align:center;font-size:0.6em;color:#e8968a;font-weight:600;">∿ 報告</div>
-                  <div style="flex:1;text-align:center;font-size:0.6em;color:#aaa;">📋 分析</div>
-                </div>
+              <div class="app-screen__body">
+                <img src="images/screen-spark-fit-2.jpg" alt="SPARK FIT 體重趨勢圖畫面" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
               </div>
             </div>
             <span class="app-screen__label">體重趨勢圖</span>
           </div>
-          <!-- Screen 3: 身型分析 -->
           <div class="app-screen">
             <div class="app-screen__frame">
-              <div class="app-screen__body" style="background:#fdf8f8;">
-                <div style="padding:0.8em 0.9em 0.4em;">
-                  <div style="font-size:0.8em;font-weight:700;color:#e8968a;">SPARK FIT</div>
-                  <div style="font-size:0.55em;color:#aaa;">分析</div>
-                </div>
-                <div style="flex:1;overflow:hidden;padding:0 0.7em 0.6em;display:flex;flex-direction:column;gap:0.4em;">
-                  <div style="background:#fff;border-radius:0.6em;padding:0.5em;border:1px solid #f0e8e8;">
-                    <div style="font-size:0.52em;color:#bbb;text-align:center;margin-bottom:0.3em;">你的身材數據</div>
-                    <div style="display:flex;justify-content:space-around;">
-                      <div style="text-align:center;"><div style="font-size:0.5em;color:#aaa;">肩寬</div><div style="font-size:0.7em;font-weight:700;color:#e8968a;">38</div></div>
-                      <div style="text-align:center;"><div style="font-size:0.5em;color:#aaa;">胸圍</div><div style="font-size:0.7em;font-weight:700;color:#e8968a;">84</div></div>
-                      <div style="text-align:center;"><div style="font-size:0.5em;color:#aaa;">腰圍</div><div style="font-size:0.7em;font-weight:700;color:#e8968a;">64</div></div>
-                      <div style="text-align:center;"><div style="font-size:0.5em;color:#aaa;">臀圍</div><div style="font-size:0.7em;font-weight:700;color:#e8968a;">90</div></div>
-                    </div>
-                  </div>
-                  <div style="background:#fff5f5;border-radius:0.6em;padding:0.6em;text-align:center;">
-                    <div style="font-size:0.55em;color:#888;margin-bottom:0.2em;">依據您的身材數據，你屬於：</div>
-                    <div style="font-size:1.2em;margin-bottom:0.2em;">🍐</div>
-                    <div style="font-size:0.8em;font-weight:700;color:#e8968a;">梨型身材（A型）</div>
-                  </div>
-                  <div style="background:#fff;border-radius:0.6em;padding:0.5em;border:1px solid #f0e8e8;">
-                    <div style="font-size:0.6em;font-weight:600;color:#e8968a;margin-bottom:0.3em;">穿搭建議</div>
-                    <div style="font-size:0.55em;color:#666;line-height:1.7;">· A 字裙平衡下半身比例<br>· 上衣亮色、下身深色<br>· 寬肩設計讓整體更勻稱</div>
-                  </div>
-                </div>
-                <div style="border-top:1px solid #eee;display:flex;background:#fff;padding:0.4em 0;">
-                  <div style="flex:1;text-align:center;font-size:0.6em;color:#aaa;">📊 數據</div>
-                  <div style="flex:1;text-align:center;font-size:0.6em;color:#aaa;">∿ 報告</div>
-                  <div style="flex:1;text-align:center;font-size:0.6em;color:#e8968a;font-weight:600;">📋 分析</div>
-                </div>
+              <div class="app-screen__body">
+                <img src="images/screen-spark-fit-3.jpg" alt="SPARK FIT 修改數據畫面" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block;">
               </div>
             </div>
-            <span class="app-screen__label">身型分析</span>
+            <span class="app-screen__label">修改數據</span>
           </div>
         </div>
         </div>
