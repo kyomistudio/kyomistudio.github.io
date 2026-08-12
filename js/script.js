@@ -13,7 +13,18 @@
     { date: '2026-05-21', author: 'MIMI', title: 'SPARK WEAR：從失控購物狂到衣櫃的主理人', url: 'blog/spark-wear.html', excerpt: '曾經，我是個擁有 547 件衣服、不折不扣的購物狂。帳單上的數字與滿坑滿谷的衣服，曾讓我陷入深深的焦慮與自我懷疑。直到我遇見「斷捨離」，一切才開始慢慢改變。' }
   ];
 
-  function blogPathPrefix() {
+  // App index (site search only) -------------------------------------------
+  var APPS = [
+    { id: 'day-light',   name: 'DAY LIGHT',   tagline: '每一天的情緒，都值得溫柔安放。', excerpt: 'DAY LIGHT 誕生於一個想好好記錄心情的午後。比起洋洋灑灑的長篇日記，更需要的是一個能在一天縫隙裡輕輕放下幾句話的地方，再加上一點正念的光，照亮那些平凡卻不想忘記的瞬間。' },
+    { id: 'spark-wear',  name: 'SPARK WEAR',  tagline: '挖掘衣櫥裡的寶藏，穿出屬於你的風格。', excerpt: '為了找回與物品的連結，我親手打造了 SPARK WEAR。它不只是一個衣櫃管理工具，更是我冷靜消費的「清單」，成功地將衣櫃精簡至 110 件左右。' },
+    { id: 'spark-shape', name: 'SPARK SHAPE', tagline: '見證那個持續變好的自己。', excerpt: '我一直有拍攝身形紀錄的習慣，但單純的照片散落在相冊裡很難精確看出變化。於是 SPARK SHAPE 誕生了，能像日記一樣管理、直接並排對比身形變化。' },
+    { id: 'spark-fit',   name: 'SPARK FIT',   tagline: '數據，是為了讓我們更了解自己。', excerpt: '過去習慣用 Excel 記錄身體數據，不夠直觀也難以隨時翻閱。於是 SPARK FIT 誕生了，不只管理體重、體脂等數據，還能分析身型、給予穿搭靈感。' },
+    { id: 'spark-plate', name: 'SPARK PLATE', tagline: '把每一餐，都過成生活的儀式感。', excerpt: '為了擺脫計算卡路里的數字壓力，我打造了 SPARK PLATE，用直觀的「九宮格」排列出你的一日三餐，一眼看出原型食物佔比高不高。' },
+    { id: 'spark-log',   name: 'SPARK LOG',   tagline: '把每一次心動的瞬間，都好好記下來。', excerpt: '路上偶然發現喜歡的小店，過幾天卻連店名都想不起來？SPARK LOG 是一份口袋名單，用照片、地址與心級評分，記下每一次心動的店家。' },
+    { id: 'spark-list',  name: 'SPARK LIST',  tagline: '陪你把每一次心動，都留給真正值得的那一件。', excerpt: '常常一時衝動下單，熱情卻撐不過拆箱那一刻？SPARK LIST 是生火單品的口袋清單，設定冷靜期與購買條件，讓衝動先降溫再決定要不要入手。' }
+  ];
+
+  function sitePathPrefix() {
     return window.location.pathname.indexOf('/blog/') !== -1 ? '../' : '';
   }
 
@@ -150,7 +161,7 @@
 
     function renderArticlePage(page) {
       currentPage = Math.min(Math.max(1, page), totalPages);
-      var prefix = blogPathPrefix();
+      var prefix = sitePathPrefix();
       var start  = (currentPage - 1) * PAGE_SIZE;
 
       articleListEl.innerHTML = '';
@@ -218,7 +229,7 @@
       '<div class="search-overlay__panel">' +
         '<div class="search-overlay__field">' +
           '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6"/><line x1="16.3" y1="16.3" x2="21" y2="21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>' +
-          '<input class="search-overlay__input" type="search" placeholder="搜尋開發隨筆⋯" aria-label="搜尋文章">' +
+          '<input class="search-overlay__input" type="search" placeholder="搜尋文章、APP⋯" aria-label="搜尋文章與 APP">' +
           '<button type="button" class="search-overlay__close" aria-label="關閉搜尋">&times;</button>' +
         '</div>' +
         '<div class="search-overlay__results"></div>' +
@@ -229,29 +240,47 @@
     var searchResults = searchOverlay.querySelector('.search-overlay__results');
     var searchClose   = searchOverlay.querySelector('.search-overlay__close');
 
+    var SEARCH_INDEX = BLOG_POSTS.map(function (post) {
+      return {
+        kind: 'blog',
+        title: post.title,
+        excerpt: post.excerpt,
+        meta: post.date.replace(/-/g, '.') + ' · ' + post.author,
+        url: post.url
+      };
+    }).concat(APPS.map(function (app) {
+      return {
+        kind: 'app',
+        title: app.name,
+        excerpt: app.tagline + ' ' + app.excerpt,
+        meta: 'APP',
+        url: 'apps.html#' + app.id
+      };
+    }));
+
     function renderSearchResults(query) {
       var q = query.trim().toLowerCase();
       searchResults.innerHTML = '';
       if (!q) {
-        searchResults.innerHTML = '<div class="search-overlay__empty">輸入關鍵字搜尋開發隨筆文章</div>';
+        searchResults.innerHTML = '<div class="search-overlay__empty">輸入關鍵字搜尋開發隨筆文章或 APP</div>';
         return;
       }
-      var matches = BLOG_POSTS.filter(function (post) {
-        return post.title.toLowerCase().indexOf(q) !== -1 || post.excerpt.toLowerCase().indexOf(q) !== -1;
+      var matches = SEARCH_INDEX.filter(function (entry) {
+        return entry.title.toLowerCase().indexOf(q) !== -1 || entry.excerpt.toLowerCase().indexOf(q) !== -1;
       });
       if (!matches.length) {
-        searchResults.innerHTML = '<div class="search-overlay__empty">找不到符合「' + query + '」的文章</div>';
+        searchResults.innerHTML = '<div class="search-overlay__empty">找不到符合「' + query + '」的結果</div>';
         return;
       }
-      var prefix = blogPathPrefix();
-      matches.forEach(function (post) {
+      var prefix = sitePathPrefix();
+      matches.forEach(function (entry) {
         var a = document.createElement('a');
         a.className = 'search-overlay__result';
-        a.href = prefix + post.url;
+        a.href = prefix + entry.url;
         a.innerHTML =
-          '<div class="search-overlay__result-meta">' + post.date.replace(/-/g, '.') + ' · ' + post.author + '</div>' +
-          '<div class="search-overlay__result-title">' + post.title + '</div>' +
-          '<p class="search-overlay__result-excerpt">' + post.excerpt + '</p>';
+          '<div class="search-overlay__result-meta">' + entry.meta + '</div>' +
+          '<div class="search-overlay__result-title">' + entry.title + '</div>' +
+          '<p class="search-overlay__result-excerpt">' + entry.excerpt + '</p>';
         searchResults.appendChild(a);
       });
     }

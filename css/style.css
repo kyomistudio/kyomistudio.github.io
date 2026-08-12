@@ -817,6 +817,7 @@ img { max-width: 100%; display: block; }
   align-items: start;
   padding-bottom: 1.75rem;
   border-bottom: 1px solid var(--color-line);
+  scroll-margin-top: 84px;
 }
 .app-entry:last-child { border-bottom: none; padding-bottom: 0; }
 .app-entry__icon {
