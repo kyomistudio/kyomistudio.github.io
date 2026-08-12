@@ -104,6 +104,7 @@ kyomistudio.github.io/
 
 ### 風格要求
 
+- **標題前綴**：由 Claude 自動產生並發布的文章，標題前一律加上「CLAUDE：」前綴（例如「CLAUDE：在遇見 Claude 之前，我以為寫程式是另一個世界的事」），須同步套用在 `<title>`、文章內 `<h1 class="article-page__title">`，以及 `js/script.js` 的 `BLOG_POSTS` 索引 title 欄位。非自動發布的文章（例如 Mimi 手動撰寫的 SPARK WEAR 篇）不加此前綴。
 - **語言**：繁體中文
 - **口吻**：Mimi 的第一人稱，溫暖、真實、有自我揭露，偶爾帶點幽默
 - **參考文章**：`blog.html` 中已發布的《SPARK WEAR：從失控購物狂到衣櫃的主理人》

@@ -7,9 +7,9 @@
 
   // Blog post index (shared by the article list + site search) -----------
   var BLOG_POSTS = [
-    { date: '2026-07-20', author: 'MIMI', title: 'Claude 說「好」，但我看不懂它給我的東西', url: 'blog/first-code.html', excerpt: '第一次拿到 Claude 給的程式碼，整整三百行，一個字都看不懂。那晚反覆問「這要放哪裡」，不是真的想搞懂，只想讓螢幕出現點什麼。凌晨一點，終於有了一個空白框框——什麼功能都沒有，但夠讓我截圖了。' },
-    { date: '2026-07-06', author: 'MIMI', title: '第一次對話：我問了一個很蠢的問題', url: 'blog/first-question.html', excerpt: '第一次打開 Claude，我盯著對話框發呆了好久，生怕問出蠢問題。後來還是鼓起勇氣打了一句很籠統的話，沒想到 Claude 認真回答了，那一刻，我對技術的恐懼開始鬆動。' },
-    { date: '2026-06-17', author: 'MIMI', title: '在遇見 Claude 之前，我以為寫程式是另一個世界的事', url: 'blog/claude-before.html', excerpt: '我是 Mimi，一個對程式碼完全沒概念的人。這篇想說說我為什麼會想做 APP，以及那段時間心裡那種「這不是我能碰的東西」的距離感。' },
+    { date: '2026-07-20', author: 'MIMI', title: 'CLAUDE：Claude 說「好」，但我看不懂它給我的東西', url: 'blog/first-code.html', excerpt: '第一次拿到 Claude 給的程式碼，整整三百行，一個字都看不懂。那晚反覆問「這要放哪裡」，不是真的想搞懂，只想讓螢幕出現點什麼。凌晨一點，終於有了一個空白框框——什麼功能都沒有，但夠讓我截圖了。' },
+    { date: '2026-07-06', author: 'MIMI', title: 'CLAUDE：第一次對話：我問了一個很蠢的問題', url: 'blog/first-question.html', excerpt: '第一次打開 Claude，我盯著對話框發呆了好久，生怕問出蠢問題。後來還是鼓起勇氣打了一句很籠統的話，沒想到 Claude 認真回答了，那一刻，我對技術的恐懼開始鬆動。' },
+    { date: '2026-06-17', author: 'MIMI', title: 'CLAUDE：在遇見 Claude 之前，我以為寫程式是另一個世界的事', url: 'blog/claude-before.html', excerpt: '我是 Mimi，一個對程式碼完全沒概念的人。這篇想說說我為什麼會想做 APP，以及那段時間心裡那種「這不是我能碰的東西」的距離感。' },
     { date: '2026-05-21', author: 'MIMI', title: 'SPARK WEAR：從失控購物狂到衣櫃的主理人', url: 'blog/spark-wear.html', excerpt: '曾經，我是個擁有 547 件衣服、不折不扣的購物狂。帳單上的數字與滿坑滿谷的衣服，曾讓我陷入深深的焦慮與自我懷疑。直到我遇見「斷捨離」，一切才開始慢慢改變。' }
   ];
 
