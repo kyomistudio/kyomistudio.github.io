@@ -223,13 +223,54 @@
   // Site search --------------------------------------------------------------
   var searchBtn = document.querySelector('.site-nav__search-btn');
   if (searchBtn) {
+    var currentPath = window.location.pathname;
+    var isAppsPage  = /\/apps\.html$/.test(currentPath);
+    var isBlogPage  = /\/blog\.html$/.test(currentPath) || currentPath.indexOf('/blog/') !== -1;
+
+    var BLOG_INDEX = BLOG_POSTS.map(function (post) {
+      return {
+        kind: 'blog',
+        title: post.title,
+        excerpt: post.excerpt,
+        meta: post.date.replace(/-/g, '.') + ' · ' + post.author,
+        url: post.url
+      };
+    });
+    var APP_INDEX = APPS.map(function (app) {
+      return {
+        kind: 'app',
+        title: app.name,
+        excerpt: app.tagline + ' ' + app.excerpt,
+        meta: 'APP',
+        url: 'apps.html#' + app.id
+      };
+    });
+
+    var SEARCH_INDEX, searchPlaceholder, searchEmptyHint, searchNoResultsLabel;
+    if (isAppsPage) {
+      SEARCH_INDEX = APP_INDEX;
+      searchPlaceholder = '搜尋 APP⋯';
+      searchEmptyHint = '輸入關鍵字搜尋 APP';
+      searchNoResultsLabel = 'APP';
+    } else if (isBlogPage) {
+      SEARCH_INDEX = BLOG_INDEX;
+      searchPlaceholder = '搜尋開發隨筆⋯';
+      searchEmptyHint = '輸入關鍵字搜尋開發隨筆文章';
+      searchNoResultsLabel = '文章';
+    } else {
+      SEARCH_INDEX = BLOG_INDEX.concat(APP_INDEX);
+      searchPlaceholder = '搜尋文章、APP⋯';
+      searchEmptyHint = '輸入關鍵字搜尋開發隨筆文章或 APP';
+      searchNoResultsLabel = '結果';
+    }
+
     var searchOverlay = document.createElement('div');
     searchOverlay.className = 'search-overlay';
     searchOverlay.innerHTML =
       '<div class="search-overlay__panel">' +
         '<div class="search-overlay__field">' +
           '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6"/><line x1="16.3" y1="16.3" x2="21" y2="21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>' +
-          '<input class="search-overlay__input" type="search" placeholder="搜尋文章、APP⋯" aria-label="搜尋文章與 APP">' +
+          '<input class="search-overlay__input" type="search" placeholder="' + searchPlaceholder + '" aria-label="搜尋">' +
           '<button type="button" class="search-overlay__close" aria-label="關閉搜尋">&times;</button>' +
         '</div>' +
         '<div class="search-overlay__results"></div>' +
@@ -240,36 +281,18 @@
     var searchResults = searchOverlay.querySelector('.search-overlay__results');
     var searchClose   = searchOverlay.querySelector('.search-overlay__close');
 
-    var SEARCH_INDEX = BLOG_POSTS.map(function (post) {
-      return {
-        kind: 'blog',
-        title: post.title,
-        excerpt: post.excerpt,
-        meta: post.date.replace(/-/g, '.') + ' · ' + post.author,
-        url: post.url
-      };
-    }).concat(APPS.map(function (app) {
-      return {
-        kind: 'app',
-        title: app.name,
-        excerpt: app.tagline + ' ' + app.excerpt,
-        meta: 'APP',
-        url: 'apps.html#' + app.id
-      };
-    }));
-
     function renderSearchResults(query) {
       var q = query.trim().toLowerCase();
       searchResults.innerHTML = '';
       if (!q) {
-        searchResults.innerHTML = '<div class="search-overlay__empty">輸入關鍵字搜尋開發隨筆文章或 APP</div>';
+        searchResults.innerHTML = '<div class="search-overlay__empty">' + searchEmptyHint + '</div>';
         return;
       }
       var matches = SEARCH_INDEX.filter(function (entry) {
         return entry.title.toLowerCase().indexOf(q) !== -1 || entry.excerpt.toLowerCase().indexOf(q) !== -1;
       });
       if (!matches.length) {
-        searchResults.innerHTML = '<div class="search-overlay__empty">找不到符合「' + query + '」的結果</div>';
+        searchResults.innerHTML = '<div class="search-overlay__empty">找不到符合「' + query + '」的' + searchNoResultsLabel + '</div>';
         return;
       }
       var prefix = sitePathPrefix();
