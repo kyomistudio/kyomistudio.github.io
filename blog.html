@@ -31,6 +31,17 @@
 <nav class="site-nav" aria-label="主要導覽">
   <div class="site-nav__inner">
     <a class="site-nav__brand" href="index.html">KYOMI STUDIO</a>
+    <ul class="site-nav__links" id="nav-menu">
+      <li><a class="site-nav__link" href="about.html"  data-page="about.html">關於我們</a></li>
+      <li><a class="site-nav__link" href="apps.html"   data-page="apps.html">APP 下載</a></li>
+      <li><a class="site-nav__link" href="blog.html"   data-page="blog.html">開發隨筆</a></li>
+    </ul>
+    <button class="site-nav__search-btn" id="nav-search-btn" aria-label="搜尋文章">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="16.2" y1="16.2" x2="21" y2="21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
     <button class="site-nav__hamburger" aria-label="開啟選單" aria-expanded="false" aria-controls="nav-menu">
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
         <line x1="2" y1="6"  x2="20" y2="6"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
@@ -38,11 +49,6 @@
         <line x1="2" y1="16" x2="20" y2="16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
       </svg>
     </button>
-    <ul class="site-nav__links" id="nav-menu">
-      <li><a class="site-nav__link" href="about.html"  data-page="about.html">關於我們</a></li>
-      <li><a class="site-nav__link" href="apps.html"   data-page="apps.html">APP 下載</a></li>
-      <li><a class="site-nav__link" href="blog.html"   data-page="blog.html">開發隨筆</a></li>
-    </ul>
   </div>
 </nav>
 
@@ -61,41 +67,8 @@
   </div>
 
   <div class="blog-section">
-    <ul class="article-list" role="list">
-
-      <li class="article-item">
-        <a class="article-item__link" href="blog/first-code.html">
-          <div class="article-item__meta">2026.07.20 · MIMI</div>
-          <h2 class="article-item__title">Claude 說「好」，但我看不懂它給我的東西</h2>
-          <p class="article-item__preview">第一次拿到 Claude 給的程式碼，整整三百行，一個字都看不懂。那晚反覆問「這要放哪裡」，不是真的想搞懂，只想讓螢幕出現點什麼。凌晨一點，終於有了一個空白框框——什麼功能都沒有，但夠讓我截圖了。</p>
-        </a>
-      </li>
-
-      <li class="article-item">
-        <a class="article-item__link" href="blog/first-question.html">
-          <div class="article-item__meta">2026.07.06 · MIMI</div>
-          <h2 class="article-item__title">第一次對話：我問了一個很蠢的問題</h2>
-          <p class="article-item__preview">第一次打開 Claude，我盯著對話框發呆了好久，生怕問出蠢問題。後來還是鼓起勇氣打了一句很籠統的話，沒想到 Claude 認真回答了，那一刻，我對技術的恐懼開始鬆動。</p>
-        </a>
-      </li>
-
-      <li class="article-item">
-        <a class="article-item__link" href="blog/claude-before.html">
-          <div class="article-item__meta">2026.06.17 · MIMI</div>
-          <h2 class="article-item__title">在遇見 Claude 之前，我以為寫程式是另一個世界的事</h2>
-          <p class="article-item__preview">我是 Mimi，一個對程式碼完全沒概念的人。這篇想說說我為什麼會想做 APP，以及那段時間心裡那種「這不是我能碰的東西」的距離感。</p>
-        </a>
-      </li>
-
-      <li class="article-item">
-        <a class="article-item__link" href="blog/spark-wear.html">
-          <div class="article-item__meta">2026.05.21 · MIMI</div>
-          <h2 class="article-item__title">SPARK WEAR：從失控購物狂到衣櫃的主理人</h2>
-          <p class="article-item__preview">曾經，我是個擁有 547 件衣服、不折不扣的購物狂。帳單上的數字與滿坑滿谷的衣服，曾讓我陷入深深的焦慮與自我懷疑。直到我遇見「斷捨離」，一切才開始慢慢改變。</p>
-        </a>
-      </li>
-
-    </ul>
+    <ul class="article-list" id="article-list" role="list"></ul>
+    <nav class="pagination" id="article-pagination" aria-label="文章分頁"></nav>
   </div>
 
 </main>
