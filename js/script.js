@@ -66,4 +66,63 @@
     });
   });
 
+  // App screenshot lightbox ------------------------------------------------
+  var screenFrames = document.querySelectorAll('.app-screen__frame');
+  if (screenFrames.length) {
+    var lightbox = document.createElement('div');
+    lightbox.className = 'screen-lightbox';
+    lightbox.innerHTML = '<button class="screen-lightbox__close" aria-label="關閉">&times;</button><div class="screen-lightbox__frame"></div>';
+    document.body.appendChild(lightbox);
+
+    var lbFrame = lightbox.querySelector('.screen-lightbox__frame');
+    var lbClose = lightbox.querySelector('.screen-lightbox__close');
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      document.body.classList.remove('lightbox-open');
+      lbFrame.innerHTML = '';
+    }
+
+    function openLightbox(frameEl) {
+      var body = frameEl.querySelector('.app-screen__body');
+      var originalWidth = frameEl.getBoundingClientRect().width;
+      var baseFontSize = body ? (parseFloat(getComputedStyle(body).fontSize) || 10) : 10;
+      var labelEl = frameEl.closest('.app-screen') && frameEl.closest('.app-screen').querySelector('.app-screen__label');
+
+      lbFrame.innerHTML = '';
+      var clone = frameEl.cloneNode(true);
+      lbFrame.appendChild(clone);
+
+      var cloneBody = clone.querySelector('.app-screen__body');
+      if (body && cloneBody) {
+        var newWidth = lbFrame.getBoundingClientRect().width;
+        var scale = originalWidth ? (newWidth / originalWidth) : 1;
+        cloneBody.style.fontSize = (baseFontSize * scale) + 'px';
+      }
+
+      if (labelEl) {
+        var caption = document.createElement('div');
+        caption.className = 'screen-lightbox__label';
+        caption.textContent = labelEl.textContent;
+        lbFrame.appendChild(caption);
+      }
+
+      lightbox.classList.add('is-open');
+      document.body.classList.add('lightbox-open');
+    }
+
+    screenFrames.forEach(function (frame) {
+      frame.addEventListener('click', function () { openLightbox(frame); });
+    });
+
+    lbFrame.addEventListener('click', closeLightbox);
+    lbClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  }
+
 })();
