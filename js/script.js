@@ -18,7 +18,7 @@
     { id: 'day-light',   name: 'DAY LIGHT',   tagline: '每一天的情緒，都值得溫柔安放。', excerpt: 'DAY LIGHT 誕生於一個想好好記錄心情的午後。比起洋洋灑灑的長篇日記，更需要的是一個能在一天縫隙裡輕輕放下幾句話的地方，再加上一點正念的光，照亮那些平凡卻不想忘記的瞬間。' },
     { id: 'spark-wear',  name: 'SPARK WEAR',  tagline: '挖掘衣櫥裡的寶藏，穿出屬於你的風格。', excerpt: '為了找回與物品的連結，我親手打造了 SPARK WEAR。它不只是一個衣櫃管理工具，更是我冷靜消費的「清單」，成功地將衣櫃精簡至 110 件左右。' },
     { id: 'spark-shape', name: 'SPARK SHAPE', tagline: '見證那個持續變好的自己。', excerpt: '我一直有拍攝身形紀錄的習慣，但單純的照片散落在相冊裡很難精確看出變化。於是 SPARK SHAPE 誕生了，能像日記一樣管理、直接並排對比身形變化。' },
-    { id: 'spark-fit',   name: 'SPARK FIT',   tagline: '數據，是為了讓我們更了解自己。', excerpt: '過去習慣用 Excel 記錄身體數據，不夠直觀也難以隨時翻閱。於是 SPARK FIT 誕生了，不只管理體重、體脂等數據，還能分析身型、給予穿搭靈感。' },
+    { id: 'spark-fit',   name: 'SPARK SCALE',   tagline: '數據，是為了讓我們更了解自己。', excerpt: '過去習慣用 Excel 記錄身體數據，不夠直觀也難以隨時翻閱。於是 SPARK SCALE 誕生了，不只管理體重、體脂等數據，還能分析身型、給予穿搭靈感。' },
     { id: 'spark-plate', name: 'SPARK PLATE', tagline: '把每一餐，都過成生活的儀式感。', excerpt: '為了擺脫計算卡路里的數字壓力，我打造了 SPARK PLATE，用直觀的「九宮格」排列出你的一日三餐，一眼看出原型食物佔比高不高。' },
     { id: 'spark-log',   name: 'SPARK LOG',   tagline: '把每一次心動的瞬間，都好好記下來。', excerpt: '路上偶然發現喜歡的小店，過幾天卻連店名都想不起來？SPARK LOG 是一份口袋名單，用照片、地址與心級評分，記下每一次心動的店家。' },
     { id: 'spark-list',  name: 'SPARK LIST',  tagline: '陪你把每一次心動，都留給真正值得的那一件。', excerpt: '常常一時衝動下單，熱情卻撐不過拆箱那一刻？SPARK LIST 是生火單品的口袋清單，設定冷靜期與購買條件，讓衝動先降溫再決定要不要入手。' }
