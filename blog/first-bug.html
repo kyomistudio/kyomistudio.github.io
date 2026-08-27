@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>第一個 bug：它說沒問題，可是畫面是空的 — KYOMI STUDIO</title>
-<meta name="description" content="第一次遇到 bug，Claude 說沒問題，但畫面還是空的。那個晚上讓我學到：「問對問題」比「得到答案」更重要。學會描述問題之後，我的開發旅程才算是真正開始。">
+<title>[CLAUDE] 第一個 bug：它說沒問題，可是畫面是空的 — KYOMI STUDIO</title>
+<meta name="description" content="畫面空白了。Claude 說沒問題，可是我看到的就是什麼都沒有。那個下午，我才發現「說清楚問題」本身就是一門學問——把錯誤訊息直接給 AI 看，比自己解釋半天有效十倍。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+TC:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
@@ -41,18 +41,18 @@
       <a href="../blog.html">← 開發隨筆</a>
     </div>
     <div class="article-page__hero">
-      <p class="article-page__meta">MIMI · 2026.08.10</p>
-      <h1 class="article-page__title">第一個 bug：它說沒問題，可是畫面是空的</h1>
+      <p class="article-page__meta">MIMI · 2026.08.24</p>
+      <h1 class="article-page__title">[CLAUDE] 第一個 bug：它說沒問題，可是畫面是空的</h1>
     </div>
     <div class="article-page__body">
-      <p class="article-page__sub"><strong>那個讓我盯著空白畫面整整二十分鐘的晚上</strong></p>
-      <p>Claude 說「沒問題，你的程式碼是對的」。但畫面還是白的。我重新複製貼上了一次，還是白的。關掉模擬器重開，還是白的。那種感覺很奇妙——明明有一個看似合理的答案，但現實跟那個答案就是對不上。我就這樣盯著那個空白畫面，足足二十分鐘。那是我第一次遇到 bug，也是我第一次意識到，「Claude 說好」不等於「它真的好」。</p>
-      <p class="article-page__sub"><strong>我那時候的「問題描述」長什麼樣子</strong></p>
-      <p>我回報問題的方式大概是：「它壞掉了」、「不能用」、「跟你說的不一樣啊」。現在回頭看，我完全可以理解 Claude 為什麼沒辦法幫我——我根本沒說清楚「什麼」壞了、「哪裡」不能用。後來 Kyo 旁敲側擊地提醒我：要告訴 Claude 你期待看到什麼，然後描述你實際看到的是什麼，那個差距，就是問題所在。我頓了一下。原來問問題也是有技術含量的？</p>
-      <p class="article-page__sub"><strong>把問題說清楚之後，世界不一樣了</strong></p>
-      <p>我試著重整思路，打出了這樣一段話：「我希望畫面上出現衣物列表，但現在完全空白，沒有任何文字，程式碼貼進去沒有報錯，就是沒有顯示。」Claude 立刻問了幾個問題，然後給了一個完全不同方向的建議——原來是資料來源的問題，根本不是顯示層的事。我把那個地方改了，畫面上出現了第一行文字。那種「原來如此」太強烈，讓我在那個畫面前楞了好一會兒。</p>
-      <p class="article-page__sub"><strong>比答案更重要的，是問題本身</strong></p>
-      <p>從那天之後，每次遇到問題，我的第一件事不再是直接貼 error 給 Claude，而是先自己試著說清楚：我想要什麼、我現在看到的是什麼、哪個步驟出了問題。這個習慣讓 Claude 給的答案準確很多，也讓我在整理問題的過程中，自己解決了一半。能把問題說清楚的那天，我才算是真正開始在「開發」，而不只是「複製貼上」。</p>
+      <p class="article-page__sub"><strong>那個讓我盯著空白畫面發呆的下午</strong></p>
+      <p>剛剛還覺得自己快要成為工程師那種飄飄然，在看到畫面一片空白的時候瞬間消失了。我照著 Claude 給我的程式碼一字不差貼進去，它也信誓旦旦說「這樣應該沒問題了」，可是，APP 就是空的。什麼都沒有。我盯著那個畫面大概有五分鐘，心裡湧上一種說不清楚的沮喪——不是生氣，是那種「我是不是根本不適合這件事」的懷疑。</p>
+      <p class="article-page__sub"><strong>我把錯誤訊息一字一句抄給 Claude，結果完全不一樣</strong></p>
+      <p>其實在那五分鐘之前，我已經問過 Claude 好幾次了。每次都用差不多的方式：「這個不行耶，怎麼辦？」Claude 的回答永遠很長，每次我都覺得「好像有道理」，然後貼進去，然後又空白。後來 Kyo 問我：「你有沒有把錯誤訊息直接複製給它看？」我才恍然大悟——我一直在用自己的話「描述」問題，但我根本說不清楚。我只能說「畫面是空的」、「就是不行」。但程式報的錯誤訊息是具體的，是可以直接給 Claude 看的。那次之後，我試著把 console 裡的紅字複製貼上直接給它，Claude 立刻給出了截然不同的答案——精準、可以用的那種。</p>
+      <p class="article-page__sub"><strong>「問對問題」比「得到答案」更值錢</strong></p>
+      <p>這個認知讓我愣了一下。我以為問問題是很容易的事，說「不行」就算提問了。但原來問問題是有技術的。就像去看醫生，你說「我哪裡不舒服」和「我昨天晚上開始發燒 38.5 度、喉嚨有點癢」，得到的診斷完全不一樣。後來的每次 debug，我開始先問自己：「我能具體描述什麼不對嗎？我有沒有把所有線索都給 Claude？」這個習慣讓後來的問題解決快很多，我也慢慢開始懂得怎麼讀懂錯誤訊息——不是完全看懂，但至少知道去哪裡找線索。</p>
+      <p class="article-page__sub"><strong>空白畫面，其實是最好的老師</strong></p>
+      <p>那個下午結束的時候，畫面終於不空白了。我截了圖，發給 Kyo，說「解決了！」但更重要的是，我感覺自己學到的不是那個 bug 怎麼修，而是「如何讓 Claude 真的幫到你」的方式。有時候工具的強大，取決於你知不知道怎麼用它。而「描述問題」這件事，我以為是常識，原來是需要練習的技能。這個小小的頓悟，讓後來很多個黑屏和報錯，都沒有那次那麼令人崩潰了。</p>
     </div>
   </div>
 </main>
