@@ -318,6 +318,7 @@ img { max-width: 100%; display: block; }
 
 .card__name-zh {
   font-size: 0.85rem;
+  font-weight: 700;
   color: var(--color-text-soft);
   letter-spacing: 0.12em;
   margin-top: -0.4rem;
@@ -847,6 +848,7 @@ img { max-width: 100%; display: block; }
 
 .app-entry__name-zh {
   font-size: 0.85rem;
+  font-weight: 700;
   color: var(--color-text-soft);
   letter-spacing: 0.12em;
   margin-top: -0.35rem;
