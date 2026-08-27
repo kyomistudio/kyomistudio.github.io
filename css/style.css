@@ -316,6 +316,14 @@ img { max-width: 100%; display: block; }
   margin-bottom: 0.65rem;
 }
 
+.card__name-zh {
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+  letter-spacing: 0.12em;
+  margin-top: -0.4rem;
+  margin-bottom: 0.9rem;
+}
+
 .card__tagline {
   font-size: 0.9rem;
   color: var(--color-text);
@@ -835,6 +843,13 @@ img { max-width: 100%; display: block; }
   font-size: 1.35rem;
   letter-spacing: 0.18em;
   color: var(--color-ink);
+}
+
+.app-entry__name-zh {
+  font-size: 0.85rem;
+  color: var(--color-text-soft);
+  letter-spacing: 0.12em;
+  margin-top: -0.35rem;
 }
 
 /* Controls row: dropdowns + download */
