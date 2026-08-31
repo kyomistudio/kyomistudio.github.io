@@ -31,7 +31,9 @@
     var today = new Date();
     today.setHours(0, 0, 0, 0);
     return COLUMN_POSTS.filter(function (post) {
-      return new Date(post.date) <= today;
+      var parts = post.date.split('-');
+      var postDate = new Date(Number(parts[0]), Number(parts[1]) - 1, Number(parts[2]));
+      return postDate <= today;
     });
   }
 
