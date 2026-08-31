@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>女人40愛自己 — KYOMI STUDIO 趣味工作室</title>
+<meta name="description" content="Mimi 的專欄「女人40愛自己」——記錄 40 歲後，在金錢、物質、關係與自我之間，重新學會愛自己的心路歷程。">
+<link rel="icon" type="image/png" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/favicon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KYOMI STUDIO 趣味工作室">
+<meta property="og:title" content="女人40愛自己 — KYOMI STUDIO 趣味工作室">
+<meta property="og:description" content="Mimi 的專欄「女人40愛自己」——記錄 40 歲後，在金錢、物質、關係與自我之間，重新學會愛自己的心路歷程。">
+<meta property="og:url" content="https://kyomistudio.github.io/column.html">
+<meta property="og:image" content="https://kyomistudio.github.io/images/og-cover.jpg">
+<meta property="og:image:width" content="1380">
+<meta property="og:image:height" content="752">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="女人40愛自己 — KYOMI STUDIO 趣味工作室">
+<meta name="twitter:description" content="Mimi 的專欄「女人40愛自己」——記錄 40 歲後，在金錢、物質、關係與自我之間，重新學會愛自己的心路歷程。">
+<meta name="twitter:image" content="https://kyomistudio.github.io/images/og-cover.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+TC:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="grain"></div>
+
+<nav class="site-nav" aria-label="主要導覽">
+  <div class="site-nav__inner">
+    <a class="site-nav__brand" href="index.html">KYOMI STUDIO</a>
+    <ul class="site-nav__links" id="nav-menu">
+      <li><a class="site-nav__link" href="about.html"  data-page="about.html">關於我們</a></li>
+      <li><a class="site-nav__link" href="apps.html"   data-page="apps.html">APP 下載</a></li>
+      <li><a class="site-nav__link" href="blog.html"   data-page="blog.html">開發隨筆</a></li>
+      <li><a class="site-nav__link" href="column.html" data-page="column.html">專欄文章</a></li>
+    </ul>
+    <button class="site-nav__search-btn" id="nav-search-btn" aria-label="搜尋文章">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="16.2" y1="16.2" x2="21" y2="21" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <button class="site-nav__hamburger" aria-label="開啟選單" aria-expanded="false" aria-controls="nav-menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <line x1="2" y1="6"  x2="20" y2="6"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="2" y1="11" x2="20" y2="11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="2" y1="16" x2="20" y2="16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<a class="fab" href="#" aria-label="請工作室喝杯茶">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M12 21s-7.5-4.6-10-9.1C0.4 8.6 1.8 5 5.4 5c2 0 3.4 1 4.6 2.6C11.2 6 12.6 5 14.6 5 18.2 5 19.6 8.6 18 11.9 15.5 16.4 12 21 12 21z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+  </svg>
+  <span class="fab__tip">請工作室喝杯茶</span>
+</a>
+
+<main>
+
+  <div class="page-hero">
+    <h1 class="page-hero__title">女人40愛自己</h1>
+    <p class="page-hero__desc">Mimi 的個人專欄。記錄 40 歲後，在金錢、物質、關係與自我之間，重新學會愛自己的心路歷程。</p>
+  </div>
+
+  <div class="blog-section">
+    <ul class="article-list" id="article-list" role="list"></ul>
+    <nav class="pagination" id="article-pagination" aria-label="文章分頁"></nav>
+  </div>
+
+</main>
+
+<footer class="footer">
+  <div class="footer__contact">
+    <a class="footer__contact-label" href="mailto:kyomistudio1203@gmail.com">Contact us 聯絡我們</a>
+  </div>
+  <p class="footer__copyright">© <span id="year"></span> KYOMI STUDIO 趣味工作室. All rights reserved.</p>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
