@@ -13,6 +13,28 @@
     { date: '2026-05-21', author: 'MIMI', title: '[SPARK WEAR] 從失控購物狂到衣櫃的主理人', url: 'blog/spark-wear.html', excerpt: '曾經，我是個擁有 547 件衣服、不折不扣的購物狂。帳單上的數字與滿坑滿谷的衣服，曾讓我陷入深深的焦慮與自我懷疑。直到我遇見「斷捨離」，一切才開始慢慢改變。' }
   ];
 
+  // Column post index (shared by the article list + site search) ---------
+  // date 為預定發布日期；未到期（date > 今天）的文章不會出現在列表、分頁或搜尋結果
+  var COLUMN_POSTS = [
+    { date: '2026-09-03', author: 'MIMI', title: '女人40愛自己：為什麼我選擇台積電，而非香奈兒？', url: 'column/tsmc-vs-chanel.html', excerpt: '曾經，我是一個徹頭徹尾的購物狂，每個月的薪水總在物慾中流逝，除了寄放在媽媽那邊的固定存款，我的身邊幾乎沒有任何積蓄。那款經典的香奈兒手錶，我看著它、想著它，足足看了十幾年。' },
+    { date: '2026-09-17', author: 'MIMI', title: '女人40愛自己：從「依賴」到「獨立」，我學會掌握財務自由', url: 'column/financial-independence.html', excerpt: '剛畢業那幾年，我是一個不折不扣的購物狂。當時完全沒有理財概念，只知道每個月乖乖把薪水的三分之一交給媽媽保管。雖然長年累月下來也積攢了一些積蓄，但我對「錢」其實是完全沒有掌控力的。' },
+    { date: '2026-10-01', author: 'MIMI', title: '女人 40 愛自己——從囤積物質，轉向投資體驗的覺醒', url: 'column/experience-over-things.html', excerpt: '曾經的我，是個典型的「月光族」，在物質的消耗中找尋安全感。直到 40 歲那年，又一次因為衝動購物而嚴重超支，那種熟悉的自責感讓我徹底崩潰。' },
+    { date: '2026-10-15', author: 'MIMI', title: '女人40愛自己：Level Up！從「網拍成癮」到「精緻斷捨離」', url: 'column/online-shopping-detox.html', excerpt: '曾經的自己，每天都要追網拍直播，跟著主播說說笑笑，順手打下關鍵字喊「+1」。那曾是我每週兩次的快樂，從久久買一次，演變成每週兩次，最後是一次下單五六件，每個月累積數十件衣服。' },
+    { date: '2026-10-29', author: 'MIMI', title: '女人 40 愛自己：捨棄經營十年的 IG：比起被按讚，我更在乎生活的溫度', url: 'column/quit-instagram.html', excerpt: '因為熱愛寫文章與分享，我曾經營部落格長達23年。為了宣傳，也為了經營「自己」，我創立了 IG 與 FB 粉絲團。隨著時間推移，我發現我變了——我開始對數字產生了病態的依賴，極度看重流量、按讚數與留言數。' },
+    { date: '2026-11-12', author: 'MIMI', title: '女人40愛自己：關係，也需要斷捨離', url: 'column/relationship-declutter.html', excerpt: '我們總聽說空間需要斷捨離，卻很少有人告訴我們，原來人際關係也需要清空與轉身。我的個性謹慎內向，對我而言，交朋友向來不是件容易的事。' },
+    { date: '2026-11-26', author: 'MIMI', title: '女人40愛自己：從徬徨無措到與疾病共存', url: 'column/living-with-illness.html', excerpt: '得知生病的那一年，我 19 歲。走出診間時，我又害怕又惶恐，腦子裡全是問號：我怎麼會得到這個病？我會好嗎？' },
+    { date: '2026-12-10', author: 'MIMI', title: '女人40愛自己：當我的小寶貝生病了', url: 'column/when-my-child-was-sick.html', excerpt: '我家兒子是個早產兒。一出生就住進保溫箱，在新生兒加護病房與新生兒病房裡待了整整 46 天，連滿月都是在醫院度過的。' },
+    { date: '2026-12-24', author: 'MIMI', title: '女人40愛自己：家庭主婦 VS. 自由工作者', url: 'column/homemaker-vs-freelancer.html', excerpt: '婚後的大多數時間，我都是一名家庭主婦。特別是在孩子出生後，我便淡出了傳統意義上的「正式工作」。過去，我曾是一名時尚 KOL，每天在部落格、Instagram 和 Facebook 寫著開箱文、分享穿搭。' }
+  ];
+
+  function getPublishedColumnPosts() {
+    var today = new Date();
+    today.setHours(0, 0, 0, 0);
+    return COLUMN_POSTS.filter(function (post) {
+      return new Date(post.date) <= today;
+    });
+  }
+
   // App index (site search only) -------------------------------------------
   var APPS = [
     { id: 'day-light',   name: 'DAY LIGHT',   tagline: '每一天的情緒，都值得溫柔安放。', excerpt: 'DAY LIGHT 誕生於一個想好好記錄心情的午後。比起洋洋灑灑的長篇日記，更需要的是一個能在一天縫隙裡輕輕放下幾句話的地方，再加上一點正念的光，照亮那些平凡卻不想忘記的瞬間。' },
@@ -25,7 +47,8 @@
   ];
 
   function sitePathPrefix() {
-    return window.location.pathname.indexOf('/blog/') !== -1 ? '../' : '';
+    var path = window.location.pathname;
+    return (path.indexOf('/blog/') !== -1 || path.indexOf('/column/') !== -1) ? '../' : '';
   }
 
   // Footer year -----------------------------------------------------------
@@ -54,9 +77,10 @@
   var navLinks = document.querySelectorAll('.site-nav__link[data-page]');
   var currentPage = window.location.pathname.split('/').pop() || 'index.html';
   var inBlogDir = window.location.pathname.includes('/blog/');
+  var inColumnDir = window.location.pathname.includes('/column/');
   navLinks.forEach(function (link) {
     var page = link.getAttribute('data-page');
-    if (page === currentPage || (inBlogDir && page === 'blog.html')) {
+    if (page === currentPage || (inBlogDir && page === 'blog.html') || (inColumnDir && page === 'column.html')) {
       link.classList.add('is-active');
     }
   });
@@ -153,7 +177,9 @@
   if (articleListEl) {
     var pagerEl  = document.getElementById('article-pagination');
     var PAGE_SIZE = 10;
-    var sortedPosts = BLOG_POSTS.slice().sort(function (a, b) {
+    var isColumnListPage = /\/column\.html$/.test(window.location.pathname);
+    var listSourcePosts = isColumnListPage ? getPublishedColumnPosts() : BLOG_POSTS;
+    var sortedPosts = listSourcePosts.slice().sort(function (a, b) {
       return new Date(b.date) - new Date(a.date);
     });
     var totalPages = Math.max(1, Math.ceil(sortedPosts.length / PAGE_SIZE));
@@ -165,6 +191,11 @@
       var start  = (currentPage - 1) * PAGE_SIZE;
 
       articleListEl.innerHTML = '';
+      if (!sortedPosts.length) {
+        articleListEl.innerHTML = '<li class="article-item is-visible"><p class="article-item__preview" style="padding:2rem 0;">目前還沒有已發布的文章，敬請期待。</p></li>';
+        renderPager();
+        return;
+      }
       sortedPosts.slice(start, start + PAGE_SIZE).forEach(function (post) {
         var li = document.createElement('li');
         li.className = 'article-item is-visible';
@@ -224,12 +255,22 @@
   var searchBtn = document.querySelector('.site-nav__search-btn');
   if (searchBtn) {
     var currentPath = window.location.pathname;
-    var isAppsPage  = /\/apps\.html$/.test(currentPath);
-    var isBlogPage  = /\/blog\.html$/.test(currentPath) || currentPath.indexOf('/blog/') !== -1;
+    var isAppsPage   = /\/apps\.html$/.test(currentPath);
+    var isBlogPage   = /\/blog\.html$/.test(currentPath) || currentPath.indexOf('/blog/') !== -1;
+    var isColumnPage = /\/column\.html$/.test(currentPath) || currentPath.indexOf('/column/') !== -1;
 
     var BLOG_INDEX = BLOG_POSTS.map(function (post) {
       return {
         kind: 'blog',
+        title: post.title,
+        excerpt: post.excerpt,
+        meta: post.date.replace(/-/g, '.') + ' · ' + post.author,
+        url: post.url
+      };
+    });
+    var COLUMN_INDEX = getPublishedColumnPosts().map(function (post) {
+      return {
+        kind: 'column',
         title: post.title,
         excerpt: post.excerpt,
         meta: post.date.replace(/-/g, '.') + ' · ' + post.author,
@@ -252,13 +293,18 @@
       searchPlaceholder = '搜尋 APP⋯';
       searchEmptyHint = '輸入關鍵字搜尋 APP';
       searchNoResultsLabel = 'APP';
+    } else if (isColumnPage) {
+      SEARCH_INDEX = COLUMN_INDEX;
+      searchPlaceholder = '搜尋專欄文章⋯';
+      searchEmptyHint = '輸入關鍵字搜尋專欄文章';
+      searchNoResultsLabel = '文章';
     } else if (isBlogPage) {
       SEARCH_INDEX = BLOG_INDEX;
       searchPlaceholder = '搜尋開發隨筆⋯';
       searchEmptyHint = '輸入關鍵字搜尋開發隨筆文章';
       searchNoResultsLabel = '文章';
     } else {
-      SEARCH_INDEX = BLOG_INDEX.concat(APP_INDEX);
+      SEARCH_INDEX = BLOG_INDEX.concat(APP_INDEX).concat(COLUMN_INDEX);
       searchPlaceholder = '搜尋文章、APP⋯';
       searchEmptyHint = '輸入關鍵字搜尋開發隨筆文章或 APP';
       searchNoResultsLabel = '結果';
