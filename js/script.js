@@ -181,6 +181,7 @@
     var PAGE_SIZE = 10;
     var isColumnListPage = /\/column\.html$/.test(window.location.pathname);
     var listSourcePosts = isColumnListPage ? getPublishedColumnPosts() : BLOG_POSTS;
+    // Sorting only — UTC-parsed Date() is fine here since both sides get the same skew; do NOT use this pattern to compare against "today" (see getPublishedColumnPosts).
     var sortedPosts = listSourcePosts.slice().sort(function (a, b) {
       return new Date(b.date) - new Date(a.date);
     });
@@ -308,7 +309,7 @@
     } else {
       SEARCH_INDEX = BLOG_INDEX.concat(APP_INDEX).concat(COLUMN_INDEX);
       searchPlaceholder = '搜尋文章、APP⋯';
-      searchEmptyHint = '輸入關鍵字搜尋開發隨筆文章或 APP';
+      searchEmptyHint = '輸入關鍵字搜尋開發隨筆、專欄文章或 APP';
       searchNoResultsLabel = '結果';
     }
 
