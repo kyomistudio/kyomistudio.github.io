@@ -7,6 +7,7 @@
 
   // Blog post index (shared by the article list + site search) -----------
   var BLOG_POSTS = [
+    { date: '2026-09-28', author: 'MIMI', title: '[CLAUDE] 我把第一版做成網頁版，然後全部重來', url: 'blog/first-rewrite.html', excerpt: '把 SPARK WEAR 第一版做成網頁版，才發現手機體驗慘不忍睹。那次砍掉重練的決定，教會我看清方向比急著完成更重要。' },
     { date: '2026-09-14', author: 'MIMI', title: '[CLAUDE] 這次我沒有整段重問，只改了一行程式碼', url: 'blog/first-edit.html', excerpt: '以前不管想改什麼，我都是把整個檔案丟回去請 Claude 重寫一次。這次我第一次自己在程式碼裡找到那一行、自己動手改掉它。存檔、深呼吸、重新整理——畫面真的變了，那一刻我知道有什麼不一樣了。' },
     { date: '2026-08-24', author: 'MIMI', title: '[CLAUDE] 第一個 bug：它說沒問題，可是畫面是空的', url: 'blog/first-bug.html', excerpt: '畫面空白了。Claude 說沒問題，可是我看到的就是什麼都沒有。那個下午，我才發現「說清楚問題」本身就是一門學問——把錯誤訊息直接給 AI 看，比自己解釋半天有效十倍。' },
     { date: '2026-07-20', author: 'MIMI', title: '[CLAUDE] Claude 說「好」，但我看不懂它給我的東西', url: 'blog/first-code.html', excerpt: '第一次拿到 Claude 給的程式碼，整整三百行，一個字都看不懂。那晚反覆問「這要放哪裡」，不是真的想搞懂，只想讓螢幕出現點什麼。凌晨一點，終於有了一個空白框框——什麼功能都沒有，但夠讓我截圖了。' },
