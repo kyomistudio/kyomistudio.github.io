@@ -7,6 +7,7 @@
 
   // Blog post index (shared by the article list + site search) -----------
   var BLOG_POSTS = [
+    { date: '2026-10-12', author: 'MIMI', title: '[CLAUDE] 第一次搞砸版本控制：我以為全部都不見了', url: 'blog/first-git-rescue.html', excerpt: '我在終端機打了一個指令，一整個下午改的東西瞬間消失，螢幕乾乾淨淨得像什麼都沒發生過。慌張地去問 Claude，才知道「版本控制」原來是一張我從沒看懂的安全網——只要存過，幾乎都留著痕跡。' },
     { date: '2026-09-28', author: 'MIMI', title: '[CLAUDE] 那個做不完的功能，被我拆成五個小問題', url: 'blog/break-it-down.html', excerpt: '我想加一個新功能，一次把所有需求都丟給 Claude，換來一份看不懂從哪裡開始的龐大方案。後來我學會先自己寫下步驟，一次只問一小步——原來拆解問題，本身就是一種能力。' },
     { date: '2026-09-14', author: 'MIMI', title: '[CLAUDE] 這次我沒有整段重問，只改了一行程式碼', url: 'blog/first-edit.html', excerpt: '以前不管想改什麼，我都是把整個檔案丟回去請 Claude 重寫一次。這次我第一次自己在程式碼裡找到那一行、自己動手改掉它。存檔、深呼吸、重新整理——畫面真的變了，那一刻我知道有什麼不一樣了。' },
     { date: '2026-08-24', author: 'MIMI', title: '[CLAUDE] 第一個 bug：它說沒問題，可是畫面是空的', url: 'blog/first-bug.html', excerpt: '畫面空白了。Claude 說沒問題，可是我看到的就是什麼都沒有。那個下午，我才發現「說清楚問題」本身就是一門學問——把錯誤訊息直接給 AI 看，比自己解釋半天有效十倍。' },

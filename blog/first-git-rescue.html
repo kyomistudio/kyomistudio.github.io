@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>[CLAUDE] 第一次搞砸版本控制：我以為全部都不見了 — KYOMI STUDIO</title>
+<meta name="description" content="我手滑打了一個指令，整個下午改的東西瞬間消失，螢幕上乾乾淨淨，像從來沒發生過。我慌張地去問 Claude，才知道「版本控制」原來是一張我一直沒看懂的安全網。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Serif+TC:wght@400;500;600&family=Noto+Sans+TC:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div class="grain"></div>
+<nav class="site-nav" aria-label="主要導覽">
+  <div class="site-nav__inner">
+    <a class="site-nav__brand" href="../index.html">KYOMI STUDIO</a>
+    <button class="site-nav__hamburger" aria-label="開啟選單" aria-expanded="false" aria-controls="nav-menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true">
+        <line x1="2" y1="6"  x2="20" y2="6"  stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="2" y1="11" x2="20" y2="11" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+        <line x1="2" y1="16" x2="20" y2="16" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+      </svg>
+    </button>
+    <ul class="site-nav__links" id="nav-menu">
+      <li><a class="site-nav__link" href="../about.html" data-page="about.html">關於我們</a></li>
+      <li><a class="site-nav__link" href="../apps.html" data-page="apps.html">APP 下載</a></li>
+      <li><a class="site-nav__link" href="../blog.html" data-page="blog.html">開發隨筆</a></li>
+    </ul>
+  </div>
+</nav>
+<a class="fab" href="#" aria-label="請工作室喝杯茶">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+    <path d="M12 21s-7.5-4.6-10-9.1C0.4 8.6 1.8 5 5.4 5c2 0 3.4 1 4.6 2.6C11.2 6 12.6 5 14.6 5 18.2 5 19.6 8.6 18 11.9 15.5 16.4 12 21 12 21z" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/>
+  </svg>
+  <span class="fab__tip">請工作室喝杯茶</span>
+</a>
+<main>
+  <div class="article-page">
+    <div class="article-page__back">
+      <a href="../blog.html">← 開發隨筆</a>
+    </div>
+    <div class="article-page__hero">
+      <p class="article-page__meta">MIMI · 2026.10.12</p>
+      <h1 class="article-page__title">[CLAUDE] 第一次搞砸版本控制：我以為全部都不見了</h1>
+    </div>
+    <div class="article-page__body">
+      <p class="article-page__sub"><strong>那個讓我手心冒汗的指令</strong></p>
+      <p>那天下午我改了好多東西，想把一些亂掉的地方清乾淨，結果在終端機裡打了一個聽起來很合理的指令，按下 Enter 的那一瞬間，畫面上乾乾淨淨——我整個下午改的東西，全部不見了。不是變醜、不是出錯，是真的消失，好像從來沒發生過一樣。我盯著螢幕，腦袋一片空白，第一個念頭是：我是不是把這幾個月的努力弄丟了。</p>
+      <p class="article-page__sub"><strong>原來「版本控制」不是術語，是一張安全網</strong></p>
+      <p>我幾乎是用發抖的手把整件事描述給 Claude，想著大概沒救了。但 Claude 的回覆很冷靜，它先問我有沒有用 git，然後說一句話讓我整個人鬆了一口氣：「只要有存過，幾乎都還留著痕跡。」原來我一直以為 git 只是一個「存檔用」的麻煩工具，上傳的時候才會用到，從來沒想過它背後其實記著我做過的每一步，就像一本沒有人看得見、但一直在寫的日記。</p>
+      <p class="article-page__sub"><strong>跟著指令一行一行打，心跳比打字速度還快</strong></p>
+      <p>Claude 教我打開一個叫 reflog 的東西，說那裡會列出我這個檔案庫做過的每一個動作。看到那一長串紀錄，我其實一個字都看不懂，但我看到了幾個眼熟的時間點，那正好是我最後一次存檔的地方。我照著 Claude 一步一步給的指令慢慢打，每打一行都要先深呼吸，怕自己又按錯什麼讓事情變得更糟。那種感覺很奇怪，像在走一條很窄的橋，但旁邊有人一直在跟你說「沒事，照這樣做」。</p>
+      <p class="article-page__sub"><strong>檔案回來的那一刻，我學到的不只是指令</strong></p>
+      <p>最後一個指令按下去，重新整理資料夾——東西全部都回來了，一字不差。我對著螢幕笑出來，那種感覺比第一次做出畫面還要激動，因為這次不是「做出新的東西」，而是「把以為失去的東西救回來」。後來我才慢慢明白，版本控制真正的意義不是「留一份備份」，是讓我敢去犯錯、敢去亂試，因為就算搞砸了，也一定有路可以走回去。這個體悟，讓我後來改東西的時候，膽子大了不少。</p>
+    </div>
+  </div>
+</main>
+<footer class="footer">
+  <div class="footer__contact">
+    <a class="footer__contact-label" href="mailto:kyomistudio1203@gmail.com">Contact us 聯絡我們</a>
+  </div>
+  <p class="footer__copyright">© <span id="year"></span> KYOMI STUDIO 趣味工作室. All rights reserved.</p>
+</footer>
+<script src="../js/script.js"></script>
+</body>
+</html>
