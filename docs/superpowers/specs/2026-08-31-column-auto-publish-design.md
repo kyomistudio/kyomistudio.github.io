@@ -109,6 +109,7 @@ var publishedColumnPosts = COLUMN_POSTS.filter(function (post) {
 
 ```html
 <li><a class="site-nav__link" href="column.html" data-page="column.html">專欄文章</a></li>
+<li><a class="site-nav__link" href="works.html"  data-page="works.html">相關作品</a></li>
 ```
 
 ---

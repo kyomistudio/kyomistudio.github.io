@@ -692,6 +692,9 @@ img { max-width: 100%; display: block; }
   gap: 2rem;
   list-style: none;
 }
+@media (max-width: 820px) {
+  .site-nav__links { gap: 1.2rem; }
+}
 .site-nav__link {
   font-size: 0.82rem;
   letter-spacing: 0.2em;
@@ -853,6 +856,9 @@ img { max-width: 100%; display: block; }
   letter-spacing: 0.12em;
   margin-top: -0.35rem;
 }
+
+.app-entry__author { font-size: 0.85rem; color: var(--color-khaki-deep); letter-spacing: 0.12em; }
+.app-entry__desc { font-size: 0.95rem; color: var(--color-text); line-height: 1.9; }
 
 /* Controls row: dropdowns + download */
 .app-entry__controls {
