@@ -857,6 +857,7 @@ img { max-width: 100%; display: block; }
   margin-top: -0.35rem;
 }
 
+.app-entry__name-sub { font-size: 0.75em; color: var(--color-text-soft); letter-spacing: 0.12em; }
 .app-entry__author { font-size: 0.85rem; color: var(--color-khaki-deep); letter-spacing: 0.12em; }
 .app-entry__desc { font-size: 0.95rem; color: var(--color-text); line-height: 1.9; }
 
