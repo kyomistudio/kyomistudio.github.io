@@ -49,7 +49,8 @@
     { id: 'spark-fit',   name: 'SPARK SCALE',   tagline: '數據，是為了讓我們更了解自己。', excerpt: '過去習慣用 Excel 記錄身體數據，不夠直觀也難以隨時翻閱。於是 SPARK SCALE 誕生了，不只管理體重、體脂等數據，還能分析身型、給予穿搭靈感。' },
     { id: 'spark-plate', name: 'SPARK PLATE', tagline: '把每一餐，都過成生活的儀式感。', excerpt: '為了擺脫計算卡路里的數字壓力，我打造了 SPARK PLATE，用直觀的「九宮格」排列出你的一日三餐，一眼看出原型食物佔比高不高。' },
     { id: 'spark-log',   name: 'SPARK LOG',   tagline: '把每一次心動的瞬間，都好好記下來。', excerpt: '路上偶然發現喜歡的小店，過幾天卻連店名都想不起來？SPARK LOG 是一份口袋名單，用照片、地址與心級評分，記下每一次心動的店家。' },
-    { id: 'spark-list',  name: 'SPARK LIST',  tagline: '陪你把每一次心動，都留給真正值得的那一件。', excerpt: '常常一時衝動下單，熱情卻撐不過拆箱那一刻？SPARK LIST 是生火單品的口袋清單，設定冷靜期與購買條件，讓衝動先降溫再決定要不要入手。' }
+    { id: 'spark-list',  name: 'SPARK LIST',  tagline: '陪你把每一次心動，都留給真正值得的那一件。', excerpt: '常常一時衝動下單，熱情卻撐不過拆箱那一刻？SPARK LIST 是生火單品的口袋清單，設定冷靜期與購買條件，讓衝動先降溫再決定要不要入手。' },
+    { id: 'tenki-outfit', name: 'TENKI OUTFIT', tagline: '用氣象結合穿搭計劃，讓你每天穿得美美不出錯！', excerpt: '每次思考穿搭都要在氣象 APP 和穿搭 APP 之間切換，於是我把兩者合而為一。TENKI OUTFIT 結合中央氣象署一週預報、自動去背服裝牆與穿搭建議，看天氣、排穿搭一次搞定。' }
   ];
 
   function sitePathPrefix() {
