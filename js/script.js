@@ -5,18 +5,6 @@
 (function () {
   'use strict';
 
-  // Blog post index (shared by the article list + site search) -----------
-  var BLOG_POSTS = [
-    { date: '2026-10-12', author: 'MIMI', title: '[CLAUDE] 第一次搞砸版本控制：我以為全部都不見了', url: 'blog/first-git-rescue.html', excerpt: '我在終端機打了一個指令，一整個下午改的東西瞬間消失，螢幕乾乾淨淨得像什麼都沒發生過。慌張地去問 Claude，才知道「版本控制」原來是一張我從沒看懂的安全網——只要存過，幾乎都留著痕跡。' },
-    { date: '2026-09-28', author: 'MIMI', title: '[CLAUDE] 那個做不完的功能，被我拆成五個小問題', url: 'blog/break-it-down.html', excerpt: '我想加一個新功能，一次把所有需求都丟給 Claude，換來一份看不懂從哪裡開始的龐大方案。後來我學會先自己寫下步驟，一次只問一小步——原來拆解問題，本身就是一種能力。' },
-    { date: '2026-09-14', author: 'MIMI', title: '[CLAUDE] 這次我沒有整段重問，只改了一行程式碼', url: 'blog/first-edit.html', excerpt: '以前不管想改什麼，我都是把整個檔案丟回去請 Claude 重寫一次。這次我第一次自己在程式碼裡找到那一行、自己動手改掉它。存檔、深呼吸、重新整理——畫面真的變了，那一刻我知道有什麼不一樣了。' },
-    { date: '2026-08-24', author: 'MIMI', title: '[CLAUDE] 第一個 bug：它說沒問題，可是畫面是空的', url: 'blog/first-bug.html', excerpt: '畫面空白了。Claude 說沒問題，可是我看到的就是什麼都沒有。那個下午，我才發現「說清楚問題」本身就是一門學問——把錯誤訊息直接給 AI 看，比自己解釋半天有效十倍。' },
-    { date: '2026-07-20', author: 'MIMI', title: '[CLAUDE] Claude 說「好」，但我看不懂它給我的東西', url: 'blog/first-code.html', excerpt: '第一次拿到 Claude 給的程式碼，整整三百行，一個字都看不懂。那晚反覆問「這要放哪裡」，不是真的想搞懂，只想讓螢幕出現點什麼。凌晨一點，終於有了一個空白框框——什麼功能都沒有，但夠讓我截圖了。' },
-    { date: '2026-07-06', author: 'MIMI', title: '[CLAUDE] 第一次對話：我問了一個很蠢的問題', url: 'blog/first-question.html', excerpt: '第一次打開 Claude，我盯著對話框發呆了好久，生怕問出蠢問題。後來還是鼓起勇氣打了一句很籠統的話，沒想到 Claude 認真回答了，那一刻，我對技術的恐懼開始鬆動。' },
-    { date: '2026-06-17', author: 'MIMI', title: '[CLAUDE] 在遇見 Claude 之前，我以為寫程式是另一個世界的事', url: 'blog/claude-before.html', excerpt: '我是 Mimi，一個對程式碼完全沒概念的人。這篇想說說我為什麼會想做 APP，以及那段時間心裡那種「這不是我能碰的東西」的距離感。' },
-    { date: '2026-05-21', author: 'MIMI', title: '[SPARK WEAR] 從失控購物狂到衣櫃的主理人', url: 'blog/spark-wear.html', excerpt: '曾經，我是個擁有 547 件衣服、不折不扣的購物狂。帳單上的數字與滿坑滿谷的衣服，曾讓我陷入深深的焦慮與自我懷疑。直到我遇見「斷捨離」，一切才開始慢慢改變。' }
-  ];
-
   // Column post index (shared by the article list + site search) ---------
   // date 為預定發布日期；未到期（date > 今天）的文章不會出現在列表、分頁或搜尋結果
   var COLUMN_POSTS = [
@@ -55,7 +43,7 @@
 
   function sitePathPrefix() {
     var path = window.location.pathname;
-    return (path.indexOf('/blog/') !== -1 || path.indexOf('/column/') !== -1) ? '../' : '';
+    return (path.indexOf('/column/') !== -1) ? '../' : '';
   }
 
   // Footer year -----------------------------------------------------------
@@ -83,11 +71,10 @@
   // Active nav link -------------------------------------------------------
   var navLinks = document.querySelectorAll('.site-nav__link[data-page]');
   var currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  var inBlogDir = window.location.pathname.includes('/blog/');
   var inColumnDir = window.location.pathname.includes('/column/');
   navLinks.forEach(function (link) {
     var page = link.getAttribute('data-page');
-    if (page === currentPage || (inBlogDir && page === 'blog.html') || (inColumnDir && page === 'column.html')) {
+    if (page === currentPage || (inColumnDir && page === 'column.html')) {
       link.classList.add('is-active');
     }
   });
@@ -184,8 +171,7 @@
   if (articleListEl) {
     var pagerEl  = document.getElementById('article-pagination');
     var PAGE_SIZE = 10;
-    var isColumnListPage = /\/column\.html$/.test(window.location.pathname);
-    var listSourcePosts = isColumnListPage ? getPublishedColumnPosts() : BLOG_POSTS;
+    var listSourcePosts = getPublishedColumnPosts();
     // Sorting only — UTC-parsed Date() is fine here since both sides get the same skew; do NOT use this pattern to compare against "today" (see getPublishedColumnPosts).
     var sortedPosts = listSourcePosts.slice().sort(function (a, b) {
       return new Date(b.date) - new Date(a.date);
@@ -264,18 +250,8 @@
   if (searchBtn) {
     var currentPath = window.location.pathname;
     var isAppsPage   = /\/apps\.html$/.test(currentPath);
-    var isBlogPage   = /\/blog\.html$/.test(currentPath) || currentPath.indexOf('/blog/') !== -1;
     var isColumnPage = /\/column\.html$/.test(currentPath) || currentPath.indexOf('/column/') !== -1;
 
-    var BLOG_INDEX = BLOG_POSTS.map(function (post) {
-      return {
-        kind: 'blog',
-        title: post.title,
-        excerpt: post.excerpt,
-        meta: post.date.replace(/-/g, '.') + ' · ' + post.author,
-        url: post.url
-      };
-    });
     var COLUMN_INDEX = getPublishedColumnPosts().map(function (post) {
       return {
         kind: 'column',
@@ -306,15 +282,10 @@
       searchPlaceholder = '搜尋專欄文章⋯';
       searchEmptyHint = '輸入關鍵字搜尋專欄文章';
       searchNoResultsLabel = '文章';
-    } else if (isBlogPage) {
-      SEARCH_INDEX = BLOG_INDEX;
-      searchPlaceholder = '搜尋開發隨筆⋯';
-      searchEmptyHint = '輸入關鍵字搜尋開發隨筆文章';
-      searchNoResultsLabel = '文章';
     } else {
-      SEARCH_INDEX = BLOG_INDEX.concat(APP_INDEX).concat(COLUMN_INDEX);
+      SEARCH_INDEX = APP_INDEX.concat(COLUMN_INDEX);
       searchPlaceholder = '搜尋文章、APP⋯';
-      searchEmptyHint = '輸入關鍵字搜尋開發隨筆、專欄文章或 APP';
+      searchEmptyHint = '輸入關鍵字搜尋專欄文章或 APP';
       searchNoResultsLabel = '結果';
     }
 
